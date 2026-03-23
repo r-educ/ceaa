@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contactez le CEAA pour des commandes, partenariats ou informations sur les formations." />
+  <title>Contact | CEAA</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="logo">CEAA</div>
+     
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="block">
+      <h2>Contact</h2>
+      <p>Nos équipes sont disponibles pour répondre à vos demandes.</p>
+      <form action="https://formspree.io/f/xaylqjrq" method="POST" class="contact-form">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="small-btn">Envoyer</button>
+      </form>
+      <p>Email direct : <a href="mailto:contact@ceaa-kpalime.tg">contact@ceaa-kpalime.tg</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© CEAA Kpalimé - Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="../index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="formateurs.html">Formateurs</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/caroussel.js"></script>
+</body>
+</html>

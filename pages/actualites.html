@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actualités | CEAA</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="logo">CEAA</div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="../index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="block">
+      <h2>Actualités du CEAA</h2>
+      <p class="news-summary">Retrouvez les dernières nouvelles du centre : nouvelles promotions, expositions, ateliers et événements culturels pour la communauté de Kpalimé.</p>
+      <div id="news-list"></div>
+      <a class="small-btn" href="../index.html">Retour à l'accueil</a>
+    </section>
+  </main>
+  <script>
+    const newsData = [
+      {title: 'Lancement de la nouvelle promotion de couture', text: 'La nouvelle promotion a commencé avec 30 apprentis motivés. Objectif : excellence et créativité dans la mode éthique.', date: '2026-03-20'},
+      {title: 'Exposition batik et sculpture locale', text: 'Ce mois, le CEAA organise une exposition ouverte au public mettant en valeur le travail de nos stagiaires en batik et sculpture.', date: '2026-04-01'},
+      {title: 'Atelier musique en plein air', text: 'Les cours de musique intègrent désormais des sessions en plein air pour redynamiser l\'expérience culturelle communautaire.', date: '2026-04-15'},
+      {title: 'Nouveau module de tissage avancé', text: 'Lancement d\'un module avancé en tissage pour maîtriser des motifs complexes et des tissus haut de gamme.', date: '2026-05-01'},
+      {title: 'Journée portes ouvertes inter-formations', text: 'Une journée pour découvrir toutes nos formations, rencontrer les formateurs et tester des ateliers gratuits.', date: '2026-05-10'}
+    ];
+
+    const container = document.getElementById('news-list');
+    container.innerHTML = newsData.map(item => `
+      <article class="news-card">
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+        <time datetime="${item.date}">${new Date(item.date).toLocaleDateString('fr-FR', {day:'2-digit', month:'long', year:'numeric'})}</time>
+      </article>
+    `).join('');
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© CEAA Kpalimé - Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="../index.html">Accueil</a>
+        <a href="formations.html">Formations</a>
+        <a href="formateurs.html">Formateurs</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/caroussel.js"></script>
+
+</body>
+</html>

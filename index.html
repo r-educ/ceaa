@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="CEAA Kpalimé : centre d'enseignement artisanal et artistique - cuisine, batik, couture, sculpture." />
+  <meta name="keywords" content="CEAA, Kpalimé, artisanat, batik, couture, sculpture, cuisine, formation" />
+  <meta property="og:title" content="CEAA - Centre d'Enseignement Artisanal et Artistique" />
+  <meta property="og:description"
+    content="Découvrez les créations artisanales et rejoignez notre communauté de clients fidèles." />
+  <meta property="og:image" content="https://<votre-site>.github.io/vitrine-ceaa/img/hero.png" />
+  <meta property="og:type" content="website" />
+  <title>CEAA - Centre d'Enseignement Artisanal et Artistique</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CEAA",
+        "url": "https://<votre-site>.github.io/vitrine-ceaa",
+        "description": "Centre d'enseignement artisanal et artistique de Kpalimé",
+        "sameAs": []
+      }
+    </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="logo">CEAA</div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Accueil</a>
+        <a href="pages/formations.html">Formations</a>
+        <a href="pages/actualites.html">Actualités</a>
+        <a href="pages/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" tabindex="0" aria-label="Carrousel des départements de formation">
+    <div class="hero-content" id="hero-content">
+      <h1 id="hero-title">Cuisine & saveurs de Kpalimé et d'ailleurs</h1>
+      <p id="hero-description">
+        Techniques culinaires, hygiène et recettes locales pour créer des
+        plats d'exception.
+      </p>
+      <a class="cta" id="hero-cta" href="pages/formations.html" aria-label="Découvrir les formations du CEAA">
+        Découvrez nos formations
+      </a>
+    </div>
+
+    <div class="hero-dots" id="hero-dots" aria-label="Choisir un département de formation"></div>
+
+    <!-- <button class="hero-arrow hero-arrow-left" id="hero-prev" aria-label="Slide précédent">‹</button>
+      <button class="hero-arrow hero-arrow-right" id="hero-next" aria-label="Slide suivant">›</button> -->
+  </section>
+
+  <main class="container">
+    <section class="block two-col">
+      <div class="block-item">
+        <h3>Mot du directeur</h3>
+        <p>
+          Bienvenue au CEAA, centre d'excellence où cuisine, batik, couture et
+          sculpture se rencontrent. Nous formons les talents et exposons des
+          œuvres d’exception.
+        </p>
+        <a href="pages/formateurs.html" class="small-btn">Rencontrez nos formateurs</a>
+      </div>
+      <div class="block-item">
+        <img src="img/directeur_actuel.png" alt="Icone directeur CEAA" />
+      </div>
+    </section>
+
+    <section id="formations" class="block">
+      <h2>Nos formations</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="img/icone/icuisine.png" alt="Cuisine CEAA" />
+          <h4>Cuisine</h4>
+          <p>Arts culinaires locaux et enseignements techniques.</p>
+        </article>
+        <article class="card">
+          <img src="img/icone/ibatik.png" alt="Batik CEAA" />
+          <h4>Batik</h4>
+          <p>Tissus artisanaux teints à la main.</p>
+        </article>
+        <article class="card">
+          <img src="img/icone/icouture.png" alt="Couture CEAA" />
+          <h4>Couture</h4>
+          <p>Mode, stylisme et couture traditionnelle.</p>
+        </article>
+        <article class="card">
+          <img src="img/icone/isculpture.png" alt="Sculpture CEAA" />
+          <h4>Sculpture</h4>
+          <p>Créations sur bois, pierre et métal.</p>
+        </article>
+        <article class="card">
+          <img src="img/icone/itissage.png" alt="Tissage CEAA" />
+          <h4>Tissage</h4>
+          <p>Techniques de tissage traditionnelles et modernes.</p>
+        </article>
+        <article class="card">
+          <img src="img/icone/ipeinture.png" alt="Peinture CEAA" />
+          <h4>Peinture</h4>
+          <p>Méthodes de peinture sur toile, mur et matériaux artisanaux.</p>
+        </article>
+        <article class="card">
+          <img src="img/icone/ipoterie.png" alt="Poterie CEAA" />
+          <h4>Poterie</h4>
+          <p>
+            Travail de l’argile, modelage et cuisson d’objets utilitaires et
+            décoratifs.
+          </p>
+        </article>
+        <article class="card">
+          <img src="img/icone/imusique.png" alt="Musique CEAA" />
+          <h4>Musique</h4>
+          <p>
+            Atelier chant et percussions pour sons traditionnels et modernes.
+          </p>
+        </article>
+      </div>
+      <a href="pages/formations.html" class="small-btn">Voir la page des formations</a>
+    </section>
+
+    <section id="produits" class="block">
+      <div class="container">
+        <div class="section-header">
+          <h2>Produits phares</h2>
+          <p>Découvrez les créations artisanales les plus remarquables de nos ateliers</p>
+        </div>
+
+        <section class="gallery-container">
+
+          <div class="bubble bubble-lg main-person">
+            <img src="/img/produits phares/tenue_femme.jpg" alt="Directeur Créatif">
+            <div class="bubble-overlay"></div>
+            <div class="bubble-description">
+              <h3>Thomas Dubois</h3>
+              <p>Directeur Artistique & Fondateur</p>
+            </div>
+          </div>
+
+          <div class="bubble bubble-sm item-top-left">
+            <img src="/img/produits phares/plat1.jpg" alt="Sweater Mockup">
+            <div class="bubble-overlay"></div>
+            <div class="bubble-description">
+              <h3>Maquette Pull</h3>
+              <p>Design Textile</p>
+            </div>
+          </div>
+
+          <div class="bubble bubble-md item-mid-left">
+            <img src="/img/produits phares/plat2.jpg" alt="A4 Magazine Mockup">
+            <div class="bubble-overlay"></div>
+            <div class="bubble-description">
+              <h3>Magazines A4</h3>
+              <p>Édition & Print</p>
+            </div>
+          </div>
+
+          <div class="bubble bubble-sm item-top-right">
+            <img src="/img/produits phares/robe-tisse.webp" alt="UX/UI Design">
+            <div class="bubble-overlay"></div>
+            <div class="bubble-description">
+              <h3>UX/UI Design</h3>
+              <p>Interfaces Mobiles</p>
+            </div>
+          </div>
+
+          <div class="bubble bubble-sm item-mid-right">
+            <img src="/img/produits phares/pagne.jpg" alt="Business Card Mockup">
+            <div class="bubble-overlay"></div>
+            <div class="bubble-description">
+              <h3>Cartes de Visite</h3>
+              <p>Identité Pro</p>
+            </div>
+          </div>
+
+          <div class="deco-circle red-ring"></div>
+          <div class="deco-circle gradient-ball"></div>
+          <div class="deco-circle green-ring"></div>
+          <div class="deco-circle gradient-square"></div>
+
+        </section>
+
+      </div>
+    </section>
+
+    <section id="meilleures-ventes" class="block">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meilleures ventes</h2>
+          <p>
+            Découvrez nos produits les plus populaires, plébiscités par nos
+            clients et visiteurs.
+          </p>
+        </div>
+
+        <div class="products-carousel">
+          <button class="carousel-btn prev" aria-label="Précédent">❮</button>
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- slide 1 -->
+              <div class="carousel-slide">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/pagne1.jpg" alt="Tapisserie Batik Royal" />
+                    <span class="product-tag">⭐ Top vente</span>
+                  </div>
+                  <div class="product-info">
+                    <h4>Tapisserie Batik Royal</h4>
+                    <p>
+                      Produit le plus demandé par les visiteurs
+                      internationaux.
+                    </p>
+                    <a href="#" class="btn-outline">Découvrir</a>
+                  </div>
+                </div>
+              </div>
+              <!-- slide 2 -->
+              <div class="carousel-slide">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/cuisine2.png" alt="culinaire Kpalimé" />
+                    <span class="product-tag">🔥 Best seller</span>
+                  </div>
+                  <div class="product-info">
+                    <h4>Assortiment culinaire « Kpalimé »</h4>
+                    <p>
+                      Top vente depuis 2025 pour cadeau d’entreprise et
+                      événements.
+                    </p>
+                    <a href="#" class="btn-outline">Découvrir</a>
+                  </div>
+                </div>
+              </div>
+              <!-- slide 3 -->
+              <div class="carousel-slide">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
+                    <span class="product-tag">✨ Coup de cœur</span>
+                  </div>
+                  <div class="product-info">
+                    <h4>Ensemble couture moderne</h4>
+                    <p>Meilleure vente dans la catégorie mode régionale.</p>
+                    <a href="#" class="btn-outline">Découvrir</a>
+                  </div>
+                </div>
+              </div>
+              <!-- slide 4 -->
+              <div class="carousel-slide">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
+                    <span class="product-tag">✨ Coup de cœur</span>
+                  </div>
+                  <div class="product-info">
+                    <h4>Ensemble couture moderne</h4>
+                    <p>Meilleure vente dans la catégorie mode régionale.</p>
+                    <a href="#" class="btn-outline">Découvrir</a>
+                  </div>
+                </div>
+              </div>
+              <!-- slide 5 -->
+              <div class="carousel-slide">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
+                    <span class="product-tag">✨ Coup de cœur</span>
+                  </div>
+                  <div class="product-info">
+                    <h4>Ensemble couture moderne</h4>
+                    <p>Meilleure vente dans la catégorie mode régionale.</p>
+                    <a href="#" class="btn-outline">Découvrir</a>
+                  </div>
+                </div>
+              </div>
+              <!-- slide 6 -->
+              <div class="carousel-slide">
+                <div class="product-card">
+                  <div class="product-image">
+                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
+                    <span class="product-tag">✨ Coup de cœur</span>
+                  </div>
+                  <div class="product-info">
+                    <h4>Ensemble couture moderne</h4>
+                    <p>Meilleure vente dans la catégorie mode régionale.</p>
+                    <a href="#" class="btn-outline">Découvrir</a>
+                  </div>
+                </div>
+              </div>
+              <!-- ajoute d'autres slides ici -->
+            </div>
+          </div>
+          <button class="carousel-btn next" aria-label="Suivant">❯</button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CEAA - Centre d'enseignement artisanal et artistique de Kpalimé</p>
+      <div class="footer-links">
+        <a href="#formations">Formations</a>
+        <a href="#produits">Produits</a>
+        <a href="pages/formateurs.html">Formateurs</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/caroussel.js"></script>
+</body>
+
+</html>
