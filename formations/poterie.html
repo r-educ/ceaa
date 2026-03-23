@@ -4,33 +4,181 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Poterie | CEAA</title>
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <link rel="stylesheet" href="../css/poterie.css"/>
+  
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav-wrap">
+    <div class="nav-wrap">
       <div class="logo">CEAA</div>
-      <nav>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      
+      <nav class="nav-menu" id="navMenu">
         <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/contact.html">Contact</a>
+        <a href="formations.html">Formations</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="block">
-      <h2>Poterie</h2>
-      <p>Travail de l’argile, modelage, cuisson et fabrication d’objets utilitaires.</p>
-      <h3>Ce que vous apprendrez</h3>
-      <ul>
-        <li>Préparation de l’argile et façonnage</li>
-        <li>Utilisation du tour et techniques manuelles</li>
-        <li>Émaillage et cuisson</li>
-      </ul>
-      <a class="small-btn" href="../pages/formations.html">Retour aux formations</a>
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h1>Poterie artisanale</h1>
+        <p>L'art de transformer l'argile en œuvres uniques. Formation complète aux techniques traditionnelles et modernes de poterie.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">245+</span>
+            <span class="stat-label">Diplômés formés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Promotions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Taux de satisfaction</span>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <div class="container">
+      <!-- Partenaires (carrousel horizontal) -->
+      <section class="partners-section">
+        <div class="partners-title">
+          <h3>Nos partenaires</h3>
+          <p>Ils nous accompagnent et valorisent l'artisanat local</p>
+        </div>
+        <div class="partners-carousel">
+          <div class="partners-track">
+            <!-- Partenaire 1 -->
+            <div class="partner-item">
+              <img src="../img/partners/unesco.png" alt="UNESCO" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=UNESCO'">
+              <p>UNESCO</p>
+            </div>
+            <div class="partner-item">
+              <img src="../img/partners/ministere-culture.png" alt="Ministère de la Culture" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=Culture'">
+              <p>Ministère de la Culture</p>
+            </div>
+            <div class="partner-item">
+              <img src="../img/partners/artisanat-togo.png" alt="Artisanat Togo" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=Artisanat+Togo'">
+              <p>Artisanat Togo</p>
+            </div>
+            <div class="partner-item">
+              <img src="../img/partners/chambre-metiers.png" alt="Chambre des Métiers" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=Chambre+Métiers'">
+              <p>Chambre des Métiers</p>
+            </div>
+            <div class="partner-item">
+              <img src="../img/partners/afd.png" alt="AFD" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=AFD'">
+              <p>AFD</p>
+            </div>
+            <div class="partner-item">
+              <img src="../img/partners/ifc.png" alt="IFC" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=IFC'">
+              <p>IFC</p>
+            </div>
+            <!-- Duplication pour effet infini -->
+            <div class="partner-item">
+              <img src="../img/partners/unesco.png" alt="UNESCO" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=UNESCO'">
+              <p>UNESCO</p>
+            </div>
+            <div class="partner-item">
+              <img src="../img/partners/ministere-culture.png" alt="Ministère de la Culture" onerror="this.src='https://placehold.co/150x80/ff6b35/white?text=Culture'">
+              <p>Ministère de la Culture</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fournitures et tenue -->
+      <section class="equipment-section">
+        <div class="partners-title">
+          <h3>Fournitures & tenue</h3>
+          <p>Équipements et matériel nécessaires à la formation</p>
+        </div>
+        <div class="equipment-grid">
+          <div class="equipment-card">
+            <img src="../img/poterie/argile.webp" alt="Argile" onerror="this.src='https://placehold.co/80x80/ff6b35/white?text=Argile'">
+            <h4>Argile & matériaux</h4>
+            <p>Argile locale, engobes, émaux, oxydes métalliques pour la coloration</p>
+          </div>
+          <div class="equipment-card">
+            <img src="../img/poterie/tour.png" alt="Tour de poterie" onerror="this.src='https://placehold.co/80x80/ff6b35/white?text=Tour'">
+            <h4>Tour de potier</h4>
+            <p>Tours électriques et manuels pour le modelage et le tournage</p>
+          </div>
+          <div class="equipment-card">
+            <img src="../img/poterie/four.jpg" alt="Four" onerror="this.src='https://placehold.co/80x80/ff6b35/white?text=Four'">
+            <h4>Fours de cuisson</h4>
+            <p>Fours électriques et traditionnels pour cuissons raku et haute température</p>
+          </div>
+          <div class="equipment-card">
+            <img src="../img/poterie/tenue.webp" alt="Tenue" onerror="this.src='https://placehold.co/80x80/ff6b35/white?text=Tenue'">
+            <h4>Tenue de travail</h4>
+            <p>Tabliers résistants, gants de protection, masques anti-poussière</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie moderne des installations -->
+      <section class="gallery-section">
+        <div class="gallery-title">
+          <h3>Nos installations</h3>
+          <p>Découvrez l'atelier de poterie et ses équipements</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="../img/poterie/atelier_poterie.jpg" alt="Atelier de poterie" onerror="this.src='https://placehold.co/600x450/ff6b35/white?text=Atelier+de+poterie'">
+            <div class="gallery-overlay">
+              <p>Atelier principal - 12 postes de travail</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="../img/poterie/enseignante_poterie.jpg" alt="Tournage" onerror="this.src='https://placehold.co/600x450/ff6b35/white?text=Salle+de+tournage'">
+            <div class="gallery-overlay">
+              <p>Salle de tournage - Tours professionnels</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="../img/poterie/cuisson.webp" alt="Fours de cuisson" onerror="this.src='https://placehold.co/600x450/ff6b35/white?text=Fours+de+cuisson'">
+            <div class="gallery-overlay">
+              <p>Zone de cuisson - 3 fours électriques</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="../img/poterie/emaillage.webp" alt="Atelier émaillage" onerror="this.src='https://placehold.co/600x450/ff6b35/white?text=Atelier+démaillage'">
+            <div class="gallery-overlay">
+              <p>Atelier d'émaillage et finitions</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="../img/poterie/expo.jpg" alt="Espace exposition" onerror="this.src='https://placehold.co/600x450/ff6b35/white?text=Espace+exposition'">
+            <div class="gallery-overlay">
+              <p>Galerie d'exposition des œuvres</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="../img/poterie/reserve.jpg" alt="Réserve" onerror="this.src='https://placehold.co/600x450/ff6b35/white?text=Réserve+matériaux'">
+            <div class="gallery-overlay">
+              <p>Réserve de matériaux et argiles</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bouton retour -->
+      <div class="back-button">
+        <a href="../index.html#formations" class="btn-back">
+          ← Retour aux formations
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -38,11 +186,13 @@
       <p>© CEAA Kpalimé - Tous droits réservés</p>
       <div class="footer-links">
         <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
+        <a href="formations.html">Formations</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="formateurs.html">Formateurs</a>
       </div>
     </div>
   </footer>
+
+  <script src="../js/formation.js"></script>
 </body>
 </html>
