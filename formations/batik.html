@@ -1,55 +1,422 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Batik | CEAA</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <div class="logo">CEAA</div>
-      
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <nav class="nav-menu" id="navMenu">
-        <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
-        <a href="../pages/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="block">
-      <h2>Batik</h2>
-      <p>Techniques de teinture, motifs et travaux en batik traditionnels et modernes.</p>
-      <h3>Ce que vous apprendrez</h3>
-      <ul>
-        <li>Création de motifs originaux</li>
-        <li>Techniques de teinture à la main</li>
-        <li>Utilisation de matériaux locaux</li>
-      </ul>
-      <a class="small-btn" href="../index.html#formations">←</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© CEAA Kpalimé - Tous droits réservés</p>
-      <div class="footer-links">
-        <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Batik & Teinture | CEAA</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      /* Réutilisation du style de poterie avec légères variantes */
+      :root {
+        --primary: #e67e22;
+        --primary-dark: #d35400;
+        --secondary: #2c3e50;
+        --light-bg: #fef9e8;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+      .site-header {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-wrap {
+        max-width: 1280px;
+        margin: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+      .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background: #333;
+        border-radius: 3px;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+      }
+      .nav-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+      .hero-banner {
+        background: linear-gradient(135deg, #1e2a3a, #0f1722);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .hero-content {
+        max-width: 900px;
+        margin: auto;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+      }
+      .container {
+        max-width: 1280px;
+        margin: auto;
+        padding: 3rem 2rem;
+      }
+      .partners-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .partners-title h3 {
+        font-size: 2rem;
+        color: var(--secondary);
+      }
+      .partners-carousel {
+        overflow: hidden;
+      }
+      .partners-track {
+        display: flex;
+        gap: 2rem;
+        animation: scroll 20s linear infinite;
+        width: fit-content;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .partner-item {
+        background: white;
+        padding: 1rem;
+        border-radius: 12px;
+        min-width: 140px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .equipment-grid,
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+      .equipment-card {
+        background: var(--light-bg);
+        padding: 1.5rem;
+        border-radius: 20px;
+        text-align: center;
+        transition: 0.3s;
+      }
+      .equipment-card img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+      .gallery-item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, black);
+        padding: 1rem;
+        color: white;
+      }
+      .cta-section {
+        background: var(--primary);
+        border-radius: 30px;
+        padding: 3rem;
+        text-align: center;
+        color: white;
+        margin: 3rem 0;
+      }
+      .btn-cta {
+        background: white;
+        color: var(--primary);
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+      }
+      .back-button {
+        text-align: center;
+        margin: 2rem;
+      }
+      .btn-back {
+        background: var(--secondary);
+        color: white;
+        padding: 0.7rem 1.8rem;
+        border-radius: 40px;
+        text-decoration: none;
+      }
+      .site-footer {
+        background: var(--secondary);
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 2rem;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .footer-links a {
+        color: white;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background: white;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          padding: 1rem;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <div class="logo">CEAA</div>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-menu">
+          <a href="../index.html">Accueil</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="contact.html">Contact</a>
+        </nav>
       </div>
-    </div>
-  </footer>
-  <script src="js/caroussel.js"></script>
-</body>
+    </header>
+    <main>
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>Batik & teinture artisanale</h1>
+          <p>
+            L'art ancestral du wax et des motifs à la cire. Créez des tissus
+            uniques avec des teintures naturelles.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">320+</span
+              ><span class="stat-label">Apprentis formés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">15</span
+              ><span class="stat-label">Ateliers équipés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span
+              ><span class="stat-label">Tradition vivante</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <section class="partners-section">
+          <div class="partners-title">
+            <h3>Nos partenaires</h3>
+            <p>Valorisation du patrimoine textile</p>
+          </div>
+          <div class="partners-carousel">
+            <div class="partners-track">
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=UNESCO"
+                  alt=""
+                />
+                <p>UNESCO</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=ModeEthic"
+                  alt=""
+                />
+                <p>Mode Éthique</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=Artisanat"
+                  alt=""
+                />
+                <p>Artisanat Togo</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=Chambre"
+                  alt=""
+                />
+                <p>Chambre Métiers</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="equipment-section">
+          <div class="partners-title">
+            <h3>Matériel & fournitures</h3>
+            <p>Outils du maître-batikier</p>
+          </div>
+          <div class="equipment-grid">
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2325/2325684.png"
+                alt="Canting"
+              />
+              <h4>Canting & brosses</h4>
+              <p>Outils à cire traditionnels</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2948/2948030.png"
+                alt="Teinture"
+              />
+              <h4>Colorants naturels</h4>
+              <p>Indigo, curcuma, écorces</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2587/2587125.png"
+                alt="Bacs"
+              />
+              <h4>Bacs de teinture</h4>
+              <p>Cuves inox et agitation</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1665/1665736.png"
+                alt="Tenue"
+              />
+              <h4>Tablier & gants</h4>
+              <p>Protection complète</p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery-section">
+          <div class="partners-title">
+            <h3>Notre atelier de création</h3>
+            <p>Espace dédié au batik contemporain</p>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/20/600/450" alt="Batik" />
+              <div class="gallery-overlay">
+                <p>Zone d'application de la cire</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/30/600/450" alt="Teinture" />
+              <div class="gallery-overlay">
+                <p>Laboratoire de teinture naturelle</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/40/600/450" alt="Séchage" />
+              <div class="gallery-overlay">
+                <p>Espace séchage et finition</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/42/600/450" alt="Exposition" />
+              <div class="gallery-overlay"><p>Boutique des créations</p></div>
+            </div>
+          </div>
+        </section>
+        <section class="cta-section">
+          <h3>Libérez votre créativité textile</h3>
+          <p>
+            Formation de 4 mois – techniques traditionnelles et design moderne
+          </p>
+          <a href="contact.html" class="btn-cta">Demander un devis</a>
+        </section>
+        <div class="back-button">
+          <a href="../index.html#formations" class="btn-back"
+            >← Retour aux formations</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© CEAA Kpalimé - Tous droits réservés</p>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a
+          ><a href="formations.html">Formations</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="formateurs.html">Formateurs</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("menuToggle")?.addEventListener("click", () => {
+        document.querySelector(".nav-menu")?.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>

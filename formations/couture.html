@@ -1,49 +1,416 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Couture | CEAA</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <div class="logo">CEAA</div>
-      <nav>
-        <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
-        <a href="../pages/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="block">
-      <h2>Couture</h2>
-      <p>Patronage, confection, stylisme mode et couture sur mesure.</p>
-      <h3>Ce que vous apprendrez</h3>
-      <ul>
-        <li>Découpe et assemblage de tissus</li>
-        <li>Création de vêtements sur mesure</li>
-        <li>Finition et qualité professionnelle</li>
-      </ul>
-      <a class="small-btn" href="../index.html#formations">←</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© CEAA Kpalimé - Tous droits réservés</p>
-      <div class="footer-links">
-        <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Couture & Modélisme | CEAA</title>
+    <style>
+      :root {
+        --primary: #c44569;
+        --primary-dark: #b83b5e;
+        --secondary: #2c3e6d;
+        --light-bg: #fdf2f5;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+      .site-header {
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-wrap {
+        max-width: 1280px;
+        margin: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+      }
+      .menu-toggle span {
+        width: 28px;
+        height: 3px;
+        background: #333;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+      }
+      .nav-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+      .nav-menu a:hover {
+        color: var(--primary);
+      }
+      .hero-banner {
+        background: linear-gradient(135deg, #2d1e2f, #4a2c40);
+        color: #fff;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .hero-content {
+        max-width: 900px;
+        margin: auto;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+      }
+      .container {
+        max-width: 1280px;
+        margin: auto;
+        padding: 3rem 2rem;
+      }
+      .partners-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .partners-title h3 {
+        font-size: 2rem;
+        color: var(--secondary);
+      }
+      .partners-carousel {
+        overflow: hidden;
+      }
+      .partners-track {
+        display: flex;
+        gap: 2rem;
+        animation: scroll 20s linear infinite;
+        width: fit-content;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .partner-item {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 12px;
+        min-width: 140px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+      .equipment-grid,
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+      .equipment-card {
+        background: var(--light-bg);
+        padding: 1.5rem;
+        border-radius: 20px;
+        text-align: center;
+      }
+      .equipment-card img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+      .gallery-item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, #000);
+        padding: 1rem;
+        color: #fff;
+      }
+      .cta-section {
+        background: var(--primary);
+        border-radius: 30px;
+        padding: 3rem;
+        text-align: center;
+        color: #fff;
+        margin: 3rem 0;
+      }
+      .btn-cta {
+        background: #fff;
+        color: var(--primary);
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+      }
+      .back-button {
+        text-align: center;
+        margin: 2rem;
+      }
+      .btn-back {
+        background: var(--secondary);
+        color: #fff;
+        padding: 0.7rem 1.8rem;
+        border-radius: 40px;
+        text-decoration: none;
+      }
+      .site-footer {
+        background: var(--secondary);
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 2rem;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .footer-links a {
+        color: #fff;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background: #fff;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          padding: 1rem;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <div class="logo">CEAA</div>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-menu">
+          <a href="../index.html">Accueil</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="contact.html">Contact</a>
+        </nav>
       </div>
-    </div>
-  </footer>
-</body>
+    </header>
+    <main>
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>Couture & modélisme</h1>
+          <p>
+            Devenez créateur de mode. Formation complète en coupe, assemblage et
+            stylisme.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">410+</span
+              ><span class="stat-label">Couturiers formés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10</span
+              ><span class="stat-label">Machines pro</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">94%</span
+              ><span class="stat-label">Taux d'emploi</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <section class="partners-section">
+          <div class="partners-title">
+            <h3>Nos partenaires</h3>
+            <p>Mode responsable & insertion</p>
+          </div>
+          <div class="partners-carousel">
+            <div class="partners-track">
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/c44569/white?text=ModeEthic"
+                  alt=""
+                />
+                <p>Fédération Mode</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/c44569/white?text=Artisanat"
+                  alt=""
+                />
+                <p>Artisanat Togo</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/c44569/white?text=Chambre"
+                  alt=""
+                />
+                <p>Chambre Métiers</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/c44569/white?text=AFD"
+                  alt=""
+                />
+                <p>AFD</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="equipment-section">
+          <div class="partners-title">
+            <h3>Matériel & tenue</h3>
+            <p>Équipement professionnel</p>
+          </div>
+          <div class="equipment-grid">
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2997/2997494.png"
+                alt="Machine"
+              />
+              <h4>Machines à coudre</h4>
+              <p>Piqueuse plate, surjeteuse, recouvreuse</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3014/3014934.png"
+                alt="Ciseaux"
+              />
+              <h4>Coupe & patrons</h4>
+              <p>Ciseaux cranter, tapis rotatif</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1040/1040253.png"
+                alt="Mannequin"
+              />
+              <h4>Mannequins couture</h4>
+              <p>Taille réglable, buste professionnel</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2620/2620941.png"
+                alt="Tenue"
+              />
+              <h4>Kit protection</h4>
+              <p>Dé à coudre, ceinture d'outils</p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery-section">
+          <div class="partners-title">
+            <h3>Atelier de création textile</h3>
+            <p>Un espace lumineux et équipé</p>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/24/600/450"
+                alt="Atelier couture"
+              />
+              <div class="gallery-overlay"><p>Salle de coupe</p></div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/26/600/450" alt="Machines" />
+              <div class="gallery-overlay">
+                <p>Parc machines dernier cri</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/28/600/450" alt="Essayage" />
+              <div class="gallery-overlay"><p>Cabine d'essayage</p></div>
+            </div>
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/32/600/450" alt="Défilé" />
+              <div class="gallery-overlay">
+                <p>Défilé des collections élèves</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="cta-section">
+          <h3>Transformez votre passion en métier</h3>
+          <p>Certification reconnue par l'État, stage en entreprise inclus</p>
+          <a href="contact.html" class="btn-cta">Réserver ma place</a>
+        </section>
+        <div class="back-button">
+          <a href="../index.html#formations" class="btn-back"
+            >← Retour aux formations</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© CEAA Kpalimé - Tous droits réservés</p>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a
+          ><a href="formations.html">Formations</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="formateurs.html">Formateurs</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("menuToggle")?.addEventListener("click", () => {
+        document.querySelector(".nav-menu")?.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>

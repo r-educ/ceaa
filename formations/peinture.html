@@ -1,37 +1,489 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Peinture | CEAA</title>
+  <title>Peinture & Arts visuels | CEAA</title>
   <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    /* Styles spécifiques pour la page Peinture */
+    :root {
+      --primary: #d32f2f;
+      --primary-dark: #b71c1c;
+      --secondary: #2c3e6d;
+      --light-bg: #fef5f0;
+      --gray: #6c757d;
+      --dark: #212529;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: #fff;
+    }
+    .site-header {
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .menu-toggle span {
+      width: 28px;
+      height: 3px;
+      background: var(--dark);
+      border-radius: 3px;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+    /* Hero */
+    .hero-banner {
+      background: linear-gradient(135deg, #8b1e1e 0%, #4a0e0e 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      color: #ff8a5c;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    /* Partenaires */
+    .partners-section, .equipment-section, .gallery-section, .cta-section {
+      margin-bottom: 4rem;
+    }
+    .partners-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .partners-title h3 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .partners-title p {
+      color: var(--gray);
+    }
+    .partners-carousel {
+      overflow: hidden;
+      width: 100%;
+    }
+    .partners-track {
+      display: flex;
+      gap: 2rem;
+      animation: scroll 25s linear infinite;
+      width: fit-content;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .partner-item {
+      min-width: 150px;
+      text-align: center;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .partner-item:hover {
+      transform: translateY(-5px);
+    }
+    .partner-item img {
+      width: 100px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .partner-item p {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    /* Equipment grid */
+    .equipment-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .equipment-card {
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .equipment-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .equipment-card img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+    .equipment-card h4 {
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+    /* Gallery */
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      padding: 1rem;
+      color: white;
+      font-weight: 500;
+    }
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 30px;
+      padding: 3rem;
+      text-align: center;
+      color: white;
+    }
+    .cta-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    /* Back button */
+    .back-button {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .btn-back {
+      background: var(--secondary);
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 40px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-back:hover {
+      background: var(--primary);
+    }
+    /* Footer */
+    .site-footer {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .footer-links a:hover {
+      opacity: 0.8;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav-menu { 
+        display: none; 
+        flex-direction: column; 
+        background: white; 
+        position: absolute; 
+        top: 70px; 
+        left: 0; 
+        right: 0; 
+        padding: 1rem; 
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .nav-menu.active { display: flex; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-stats { gap: 1.5rem; }
+      .container { padding: 2rem 1rem; }
+      .cta-section h3 { font-size: 1.5rem; }
+      .equipment-grid, .gallery-grid { gap: 1rem; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="container nav-wrap">
+    <div class="nav-wrap">
       <div class="logo">CEAA</div>
-      <nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
         <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
-        <a href="../pages/contact.html">Contact</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="block">
-      <h2>Peinture</h2>
-      <p>Ateliers de peinture sur toile, décoration murale et prise en main des matériaux.</p>
-      <h3>Ce que vous apprendrez</h3>
-      <ul>
-        <li>Techniques de base et avancées de peinture</li>
-        <li>Couleurs et composition</li>
-        <li>Création d'œuvres expressives</li>
-      </ul>
-      <a class="small-btn" href="../index.html#formations">←</a>
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h1>Peinture & Arts visuels</h1>
+        <p>Libérez votre créativité sur la toile. Formation complète aux techniques picturales : acrylique, huile, aquarelle et techniques mixtes.</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">320+</span>
+            <span class="stat-label">Artistes formés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">14</span>
+            <span class="stat-label">Promotions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">96%</span>
+            <span class="stat-label">Taux de satisfaction</span>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <div class="container">
+      <!-- Partenaires (carrousel horizontal) -->
+      <section class="partners-section">
+        <div class="partners-title">
+          <h3>Nos partenaires</h3>
+          <p>Ils soutiennent la création artistique et la diffusion des œuvres</p>
+        </div>
+        <div class="partners-carousel">
+          <div class="partners-track">
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=UNESCO" alt="UNESCO">
+              <p>UNESCO</p>
+            </div>
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=Ministère+Culture" alt="Ministère de la Culture">
+              <p>Ministère Culture</p>
+            </div>
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=Institut+Français" alt="Institut Français">
+              <p>Institut Français</p>
+            </div>
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=Galerie+Nationale" alt="Galerie Nationale">
+              <p>Galerie Nationale</p>
+            </div>
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=AFD" alt="AFD">
+              <p>AFD</p>
+            </div>
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=IFC" alt="IFC">
+              <p>IFC</p>
+            </div>
+            <!-- Duplication pour effet infini -->
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=UNESCO" alt="UNESCO">
+              <p>UNESCO</p>
+            </div>
+            <div class="partner-item">
+              <img src="https://placehold.co/150x80/d32f2f/white?text=Ministère+Culture" alt="Ministère de la Culture">
+              <p>Ministère Culture</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fournitures et tenue -->
+      <section class="equipment-section">
+        <div class="partners-title">
+          <h3>Matériel & fournitures</h3>
+          <p>Équipements et outils essentiels pour le peintre</p>
+        </div>
+        <div class="equipment-grid">
+          <div class="equipment-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2991/2991106.png" alt="Peintures">
+            <h4>Peintures & pigments</h4>
+            <p>Acrylique, huile, aquarelle, gouache et pigments naturels d'Afrique</p>
+          </div>
+          <div class="equipment-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2939/2939964.png" alt="Pinceaux">
+            <h4>Pinceaux & couteaux</h4>
+            <p>Jeux complets de pinceaux, couteaux à peindre et spatules</p>
+          </div>
+          <div class="equipment-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2638/2638079.png" alt="Toiles">
+            <h4>Toiles & supports</h4>
+            <p>Toiles en coton, châssis, papiers aquarelle, cartons toilés</p>
+          </div>
+          <div class="equipment-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3147/3147953.png" alt="Tenue">
+            <h4>Tenue de travail</h4>
+            <p>Tabliers résistants, blouses, gants de protection</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galerie des installations -->
+      <section class="gallery-section">
+        <div class="partners-title">
+          <h3>Nos installations</h3>
+          <p>Découvrez l'atelier de peinture et ses espaces de création</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://picsum.photos/id/1/600/450" alt="Atelier peinture">
+            <div class="gallery-overlay">
+              <p>Atelier principal - 15 chevalets</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/id/10/600/450" alt="Cours collectif">
+            <div class="gallery-overlay">
+              <p>Cours de technique acrylique</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/id/15/600/450" alt="Espace aquarelle">
+            <div class="gallery-overlay">
+              <p>Espace aquarelle - lumière naturelle</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/id/22/600/450" alt="Atelier modèle vivant">
+            <div class="gallery-overlay">
+              <p>Atelier modèle vivant</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/id/25/600/450" alt="Galerie d'exposition">
+            <div class="gallery-overlay">
+              <p>Galerie d'exposition des œuvres</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/id/38/600/450" alt="Réserve matériel">
+            <div class="gallery-overlay">
+              <p>Réserve de matériel et pigments</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appel à l'action -->
+      <section class="cta-section">
+        <h3>Révélez l'artiste qui sommeille en vous</h3>
+        <p>Formation diplômante sur 8 mois - Stages pratiques - Exposition de fin d'année</p>
+        <a href="contact.html" class="btn-cta">S'inscrire maintenant</a>
+      </section>
+
+      <!-- Bouton retour -->
+      <div class="back-button">
+        <a href="../index.html#formations" class="btn-back">
+          ← Retour aux formations
+        </a>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -39,11 +491,24 @@
       <p>© CEAA Kpalimé - Tous droits réservés</p>
       <div class="footer-links">
         <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
+        <a href="formations.html">Formations</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="formateurs.html">Formateurs</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Menu toggle pour mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const expanded = navMenu.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', expanded);
+      });
+    }
+  </script>
 </body>
 </html>

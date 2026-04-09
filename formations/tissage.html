@@ -1,49 +1,382 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tissage | CEAA</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <div class="logo">CEAA</div>
-      <nav>
-        <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
-        <a href="../pages/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="block">
-      <h2>Tissage</h2>
-      <p>Tissage traditionnel et contemporain, matières naturelles et motifs créatifs.</p>
-      <h3>Ce que vous apprendrez</h3>
-      <ul>
-        <li>Préparation des fibres et métiers à tisser</li>
-        <li>Conception de motifs</li>
-        <li>Production de pièces textiles</li>
-      </ul>
-      <a class="small-btn" href="../index.html#formations">←</a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© CEAA Kpalimé - Tous droits réservés</p>
-      <div class="footer-links">
-        <a href="../index.html">Accueil</a>
-        <a href="../pages/formations.html">Formations</a>
-        <a href="../pages/actualites.html">Actualités</a>
-        <a href="../pages/formateurs.html">Formateurs</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tissage & tapisserie | CEAA</title>
+    <style>
+      :root {
+        --primary: #2c6e49;
+        --primary-dark: #1e5631;
+        --secondary: #3b2e24;
+        --light-bg: #f2f7f0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+      .site-header {
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+      }
+      .nav-wrap {
+        max-width: 1280px;
+        margin: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+      }
+      .nav-menu {
+        display: flex;
+        gap: 2rem;
+      }
+      .hero-banner {
+        background: linear-gradient(135deg, #1e3b2c, #2d5a3f);
+        color: #fff;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary);
+        display: block;
+      }
+      .container {
+        max-width: 1280px;
+        margin: auto;
+        padding: 3rem 2rem;
+      }
+      .partners-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .partners-carousel {
+        overflow: hidden;
+      }
+      .partners-track {
+        display: flex;
+        gap: 2rem;
+        animation: scroll 20s linear infinite;
+        width: fit-content;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .partner-item {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 12px;
+        min-width: 140px;
+        text-align: center;
+      }
+      .equipment-grid,
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 2rem;
+      }
+      .equipment-card {
+        background: var(--light-bg);
+        padding: 1.5rem;
+        border-radius: 20px;
+        text-align: center;
+      }
+      .equipment-card img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+      }
+      .gallery-item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, #000);
+        padding: 1rem;
+        color: #fff;
+      }
+      .cta-section {
+        background: var(--primary);
+        border-radius: 30px;
+        padding: 3rem;
+        text-align: center;
+        color: #fff;
+        margin: 3rem 0;
+      }
+      .btn-cta {
+        background: #fff;
+        color: var(--primary);
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .back-button {
+        text-align: center;
+        margin: 2rem;
+      }
+      .btn-back {
+        background: var(--secondary);
+        color: #fff;
+        padding: 0.7rem 1.8rem;
+        border-radius: 40px;
+        text-decoration: none;
+      }
+      .site-footer {
+        background: var(--secondary);
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        .nav-menu {
+          display: none;
+          flex-direction: column;
+          background: #fff;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          right: 0;
+          padding: 1rem;
+        }
+        .nav-menu.active {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <div class="logo">CEAA</div>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-menu">
+          <a href="../index.html">Accueil</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="contact.html">Contact</a>
+        </nav>
       </div>
-    </div>
-  </footer>
-</body>
+    </header>
+    <main>
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>Tissage & tapisserie</h1>
+          <p>
+            Redécouvrez l'art du tissage traditionnel et contemporain. Création
+            de tapis, étoffes et tentures.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">210+</span
+              ><span class="stat-label">Tisserands formés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">25</span
+              ><span class="stat-label">Métiers à tisser</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">92%</span
+              ><span class="stat-label">Valorisation locale</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <section class="partners-section">
+          <div class="partners-title">
+            <h3>Nos partenaires</h3>
+            <p>Filière textile durable</p>
+          </div>
+          <div class="partners-carousel">
+            <div class="partners-track">
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/2c6e49/white?text=UNESCO"
+                  alt=""
+                />
+                <p>UNESCO</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/2c6e49/white?text=Artisanat"
+                  alt=""
+                />
+                <p>Artisanat Togo</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/2c6e49/white?text=FairTrade"
+                  alt=""
+                />
+                <p>Fair Trade</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="equipment-section">
+          <div class="partners-title">
+            <h3>Matériel & tenue</h3>
+            <p>Outils du tisserand</p>
+          </div>
+          <div class="equipment-grid">
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2336/2336542.png"
+                alt="Métier"
+              />
+              <h4>Métiers à tisser</h4>
+              <p>Métiers verticaux et horizontaux</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3348/3348813.png"
+                alt="Fils"
+              />
+              <h4>Fibres naturelles</h4>
+              <p>Coton, raphia, laine, jute</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2755/2755491.png"
+                alt="Navettes"
+              />
+              <h4>Navettes & lisses</h4>
+              <p>Différentes tailles pour motifs</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3234/3234829.png"
+                alt="Tenue"
+              />
+              <h4>Tablier & lorgnette</h4>
+              <p>Protection yeux et vêtements</p>
+            </div>
+          </div>
+        </section>
+        <section class="gallery-section">
+          <div class="partners-title">
+            <h3>Atelier de tissage</h3>
+            <p>Ambiance authentique et matériel moderne</p>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img src="https://picsum.photos/id/89/600/450" alt="Tissage" />
+              <div class="gallery-overlay">
+                <p>Salle des métiers à tisser</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/94/600/450"
+                alt="Teinture fils"
+              />
+              <div class="gallery-overlay"><p>Atelier teinture fils</p></div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/120/600/450"
+                alt="Tapisserie"
+              />
+              <div class="gallery-overlay"><p>Œuvres des élèves</p></div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/144/600/450"
+                alt="Exposition"
+              />
+              <div class="gallery-overlay"><p>Exposition vente</p></div>
+            </div>
+          </div>
+        </section>
+        <section class="cta-section">
+          <h3>Préservez et innovez l'art du tissage</h3>
+          <p>
+            Certification professionnelle - Débouchés dans la mode et la
+            décoration
+          </p>
+          <a href="contact.html" class="btn-cta">S'inscrire en ligne</a>
+        </section>
+        <div class="back-button">
+          <a href="../index.html#formations" class="btn-back"
+            >← Retour aux formations</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© CEAA Kpalimé - Tous droits réservés</p>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a
+          ><a href="formations.html">Formations</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="formateurs.html">Formateurs</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("menuToggle")?.addEventListener("click", () => {
+        document.querySelector(".nav-menu")?.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>

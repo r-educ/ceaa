@@ -70,7 +70,7 @@
       title: "Poterie : modelage & cuisson",
       description:
         "Modélisation de l'argile, cuisson en four et création d'objets en céramique.",
-      bg: "../img/poterie.jpg", // Chemin local sans url()
+      bg: "../img/poterie/poterie.jpg", // Chemin local sans url()
       grad1: "rgba(214, 134, 82, 0.85)",
       grad2: "rgba(125, 75, 35, 0.75)",
       ctaLink: "#formation",
