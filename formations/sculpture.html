@@ -1,303 +1,251 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sculpture | CEAA</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link rel="stylesheet" href="../css/formation-page.css" />
-  <style>
-    /* Styles spécifiques pour toutes les pages de formation - cohérence avec poterie */
-    :root {
-      --primary: #ff6b35;
-      --primary-dark: #e55a2b;
-      --secondary: #2c3e6d;
-      --light-bg: #f9f5f0;
-      --gray: #6c757d;
-      --dark: #212529;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: var(--dark);
-      background: #fff;
-    }
-    .site-header {
-      background: #fff;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: -0.5px;
-    }
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .menu-toggle span {
-      width: 28px;
-      height: 3px;
-      background: var(--dark);
-      border-radius: 3px;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-menu a:hover {
-      color: var(--primary);
-    }
-    /* Hero */
-    .hero-banner {
-      background: linear-gradient(135deg, #2c3e6d 0%, #1a2a4a 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero-content p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-    }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .stat-item {
-      text-align: center;
-    }
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      display: block;
-      color: var(--primary);
-    }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-    /* Partenaires */
-    .partners-section, .equipment-section, .gallery-section, .cta-section {
-      margin-bottom: 4rem;
-    }
-    .partners-title {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .partners-title h3 {
-      font-size: 2rem;
-      color: var(--secondary);
-      margin-bottom: 0.5rem;
-    }
-    .partners-carousel {
-      overflow: hidden;
-      width: 100%;
-    }
-    .partners-track {
-      display: flex;
-      gap: 2rem;
-      animation: scroll 25s linear infinite;
-      width: fit-content;
-    }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .partner-item {
-      min-width: 150px;
-      text-align: center;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    .partner-item img {
-      width: 100px;
-      height: 60px;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
-    }
-    .equipment-grid, .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .equipment-card {
-      background: var(--light-bg);
-      padding: 1.5rem;
-      border-radius: 20px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .equipment-card:hover {
-      transform: translateY(-5px);
-    }
-    .equipment-card img {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      margin-bottom: 1rem;
-    }
-    .gallery-item {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    .gallery-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
-      padding: 1rem;
-      color: white;
-      font-weight: 500;
-    }
-    .cta-section {
-      background: var(--primary);
-      border-radius: 30px;
-      padding: 3rem;
-      text-align: center;
-      color: white;
-    }
-    .cta-section h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .btn-cta {
-      display: inline-block;
-      background: white;
-      color: var(--primary);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-      transition: transform 0.2s;
-    }
-    .btn-cta:hover {
-      transform: scale(1.05);
-    }
-    .back-button {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .btn-back {
-      background: var(--secondary);
-      color: white;
-      padding: 0.7rem 1.8rem;
-      border-radius: 40px;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-    .btn-back:hover {
-      background: var(--primary);
-    }
-    .site-footer {
-      background: var(--secondary);
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      .nav-menu { display: none; flex-direction: column; background: white; position: absolute; top: 70px; left: 0; right: 0; padding: 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-      .nav-menu.active { display: flex; }
-      .hero-content h1 { font-size: 2rem; }
-      .hero-stats { gap: 1.5rem; }
-      .container { padding: 2rem 1rem; }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <div class="logo">CEAA</div>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="nav-menu" id="navMenu"><a href="../index.html">Accueil</a><a href="actualites.html">Actualités</a><a href="contact.html">Contact</a></nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero-banner">
-      <div class="hero-content">
-        <h1>Sculpture & modelage</h1>
-        <p>Maîtrisez l'art de donner vie à la pierre, au bois et à l'argile. Techniques traditionnelles et contemporaines.</p>
-        <div class="hero-stats"><div class="stat-item"><span class="stat-number">180+</span><span class="stat-label">Artistes formés</span></div><div class="stat-item"><span class="stat-number">8</span><span class="stat-label">Ateliers dédiés</span></div><div class="stat-item"><span class="stat-number">96%</span><span class="stat-label">Insertion pro</span></div></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sculpture | CEAA</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- <link rel="stylesheet" href="../css/style_sculpt.css" /> -->
+    <link rel="stylesheet" href="../css/sc_form.css" />
+
+    <style>
+      :root {
+        --primary: #ff6b35;
+        --primary-dark: #e55a2b;
+        --secondary: #2c3e6d;
+        --light-bg: #f9f5f0;
+        --gray: #6c757d;
+        --dark: #212529;
+      }
+      /* Hero */
+      .hero-banner {
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("../img/sculpture/hero_sculp.jpg");
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="../index.html" class="logo">CEAA</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html">Accueil</a></li>
+
+          <!-- MENU DÉROULANT FORMATIONS -->
+          <li class="dropdown" id="formationsDropdown">
+            <a href="#">Formations</a>
+            <ul class="dropdown-menu">
+              <li><a href="poterie.html">🏺 Poterie</a></li>
+              <li><a href="sculpture.html">🗿 Sculpture</a></li>
+              <li><a href="peinture.html">🎨 Peinture</a></li>
+              <li><a href="batik.html">🖌️ Batik & Teinture</a></li>
+              <li><a href="couture.html">🧵 Couture & Modélisme</a></li>
+              <li><a href="cuisine.html">🍳 Cuisine & Gastronomie</a></li>
+              <li><a href="musique.html">🥁 Musique & Lutherie</a></li>
+              <li><a href="tissage.html">🪢 Tissage & Tapisserie</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../pages/actualites.html">Actualités</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
       </div>
-    </section>
-    <div class="container">
-      <section class="partners-section"><div class="partners-title"><h3>Nos partenaires</h3><p>Ils soutiennent la création sculpturale</p></div><div class="partners-carousel"><div class="partners-track"><div class="partner-item"><img src="https://placehold.co/150x80/ff6b35/white?text=UNESCO" alt="UNESCO"><p>UNESCO</p></div><div class="partner-item"><img src="https://placehold.co/150x80/ff6b35/white?text=Culture" alt="Ministère"><p>Ministère Culture</p></div><div class="partner-item"><img src="https://placehold.co/150x80/ff6b35/white?text=Artisanat" alt="Artisanat"><p>Artisanat Togo</p></div><div class="partner-item"><img src="https://placehold.co/150x80/ff6b35/white?text=Métiers" alt="Métiers"><p>Chambre Métiers</p></div><div class="partner-item"><img src="https://placehold.co/150x80/ff6b35/white?text=AFD" alt="AFD"><p>AFD</p></div><div class="partner-item"><img src="https://placehold.co/150x80/ff6b35/white?text=IFC" alt="IFC"><p>IFC</p></div></div></div></section>
-      
-      <section class="equipment-section"><div class="partners-title"><h3>Matériel & tenue</h3><p>Outils essentiels pour le sculpteur</p></div><div class="equipment-grid"><div class="equipment-card"><img src="https://cdn-icons-png.flaticon.com/512/3014/3014682.png" alt="Ciseaux"><h4>Ciseaux & gouges</h4><p>Jeu complet d'ébauchage et finition</p></div><div class="equipment-card"><img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="Pierre"><h4>Pierres & blocs</h4><p>Marbre, calcaire, granit locaux</p></div><div class="equipment-card"><img src="https://cdn-icons-png.flaticon.com/512/1921/1921443.png" alt="Établi"><h4>Établis lourds</h4><p>Supports rotatifs et butoirs</p></div><div class="equipment-card"><img src="https://cdn-icons-png.flaticon.com/512/1410/1410102.png" alt="Protection"><h4>Équipement sécurité</h4><p>Lunettes, masques, gants anti-coupure</p></div></div></section>
-      
-      <section class="gallery-section"><div class="partners-title"><h3>Nos installations</h3><p>Ateliers de sculpture professionnels</p></div><div class="gallery-grid"><div class="gallery-item"><img src="https://picsum.photos/id/96/600/450" alt="Atelier sculpture"><div class="gallery-overlay"><p>Atelier taille pierre - 8 postes</p></div></div><div class="gallery-item"><img src="https://picsum.photos/id/98/600/450" alt="Salle modelage"><div class="gallery-overlay"><p>Espace modelage argile</p></div></div><div class="gallery-item"><img src="https://picsum.photos/id/102/600/450" alt="Sculpture bois"><div class="gallery-overlay"><p>Atelier bois & outils électriques</p></div></div><div class="gallery-item"><img src="https://picsum.photos/id/106/600/450" alt="Exposition"><div class="gallery-overlay"><p>Galerie d'exposition permanente</p></div></div></div></section>
-      
-      <section class="cta-section"><h3>Devenez sculpteur professionnel</h3><p>Formation sur 6 mois, stages pratiques et accompagnement à la vente</p><a href="contact.html" class="btn-cta">S'inscrire maintenant</a></section>
-      <div class="back-button"><a href="../index.html#formations" class="btn-back">← Retour aux formations</a></div>
-    </div>
-  </main>
-  <footer class="site-footer"><div class="container"><p>© CEAA Kpalimé - Tous droits réservés</p><div class="footer-links"><a href="../index.html">Accueil</a><a href="formations.html">Formations</a><a href="actualites.html">Actualités</a><a href="formateurs.html">Formateurs</a></div></div></footer>
-  <script>document.getElementById('menuToggle')?.addEventListener('click',()=>{document.getElementById('navMenu')?.classList.toggle('active');});</script>
-</body>
+    </header>
+    <main>
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>Sculpture & modelage</h1>
+          <p>
+            Maîtrisez l'art de donner vie à la pierre, au bois et à l'argile.
+            Techniques traditionnelles et contemporaines.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">180+</span
+              ><span class="stat-label">Artistes formés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">8</span
+              ><span class="stat-label">Ateliers dédiés</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">96%</span
+              ><span class="stat-label">Insertion pro</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <section class="partners-section">
+          <div class="partners-title">
+            <h3>Nos partenaires</h3>
+            <p>Ils soutiennent la création sculpturale</p>
+          </div>
+          <div class="partners-carousel">
+            <div class="partners-track">
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=UNESCO"
+                  alt="UNESCO"
+                />
+                <p>UNESCO</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=Culture"
+                  alt="Ministère"
+                />
+                <p>Ministère Culture</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=Artisanat"
+                  alt="Artisanat"
+                />
+                <p>Artisanat Togo</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=Métiers"
+                  alt="Métiers"
+                />
+                <p>Chambre Métiers</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=AFD"
+                  alt="AFD"
+                />
+                <p>AFD</p>
+              </div>
+              <div class="partner-item">
+                <img
+                  src="https://placehold.co/150x80/ff6b35/white?text=IFC"
+                  alt="IFC"
+                />
+                <p>IFC</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="equipment-section">
+          <div class="partners-title">
+            <h3>Matériel & tenue</h3>
+            <p>Outils essentiels pour le sculpteur</p>
+          </div>
+          <div class="equipment-grid">
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3014/3014682.png"
+                alt="Ciseaux"
+              />
+              <h4>Ciseaux & gouges</h4>
+              <p>Jeu complet d'ébauchage et finition</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png"
+                alt="Pierre"
+              />
+              <h4>Pierres & blocs</h4>
+              <p>Marbre, calcaire, granit locaux</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1921/1921443.png"
+                alt="Établi"
+              />
+              <h4>Établis lourds</h4>
+              <p>Supports rotatifs et butoirs</p>
+            </div>
+            <div class="equipment-card">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1410/1410102.png"
+                alt="Protection"
+              />
+              <h4>Équipement sécurité</h4>
+              <p>Lunettes, masques, gants anti-coupure</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section">
+          <div class="partners-title">
+            <h3>Nos installations</h3>
+            <p>Ateliers de sculpture professionnels</p>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/96/600/450"
+                alt="Atelier sculpture"
+              />
+              <div class="gallery-overlay">
+                <p>Atelier taille pierre - 8 postes</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/98/600/450"
+                alt="Salle modelage"
+              />
+              <div class="gallery-overlay"><p>Espace modelage argile</p></div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/102/600/450"
+                alt="Sculpture bois"
+              />
+              <div class="gallery-overlay">
+                <p>Atelier bois & outils électriques</p>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="https://picsum.photos/id/106/600/450"
+                alt="Exposition"
+              />
+              <div class="gallery-overlay">
+                <p>Galerie d'exposition permanente</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <h3>Devenez sculpteur professionnel</h3>
+          <p>
+            Formation sur 6 mois, stages pratiques et accompagnement à la vente
+          </p>
+          <a href="contact.html" class="btn-cta">S'inscrire maintenant</a>
+        </section>
+        <div class="back-button">
+          <a href="../index.html#formations" class="btn-back">←</a>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© CEAA Kpalimé - Tous droits réservés</p>
+        <div class="footer-links">
+          <a href="../index.html">Accueil</a
+          ><a href="formations.html">Formations</a
+          ><a href="actualites.html">Actualités</a
+          ><a href="formateurs.html">Formateurs</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("menuToggle")?.addEventListener("click", () => {
+        document.getElementById("navMenu")?.classList.toggle("active");
+      });
+    </script>
+  </body>
 </html>

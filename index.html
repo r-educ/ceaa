@@ -1,21 +1,41 @@
 <!doctype html>
 <html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="CEAA Kpalimé : centre d'enseignement artisanal et artistique - cuisine, batik, couture, sculpture."
+    />
+    <meta
+      name="keywords"
+      content="CEAA, Kpalimé, artisanat, batik, couture, sculpture, cuisine, formation"
+    />
+    <meta
+      property="og:title"
+      content="CEAA - Centre d'Enseignement Artisanal et Artistique"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez les créations artisanales et rejoignez notre communauté de clients fidèles."
+    />
+    <meta
+      property="og:image"
+      content="https://<votre-site>.github.io/vitrine-ceaa/img/hero.png"
+    />
+    <meta property="og:type" content="website" />
+    <title>CEAA - Centre d'Enseignement Artisanal et Artistique</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="CEAA Kpalimé : centre d'enseignement artisanal et artistique - cuisine, batik, couture, sculpture." />
-  <meta name="keywords" content="CEAA, Kpalimé, artisanat, batik, couture, sculpture, cuisine, formation" />
-  <meta property="og:title" content="CEAA - Centre d'Enseignement Artisanal et Artistique" />
-  <meta property="og:description"
-    content="Découvrez les créations artisanales et rejoignez notre communauté de clients fidèles." />
-  <meta property="og:image" content="https://<votre-site>.github.io/vitrine-ceaa/img/hero.png" />
-  <meta property="og:type" content="website" />
-  <title>CEAA - Centre d'Enseignement Artisanal et Artistique</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <script type="application/ld+json">
+    <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
@@ -25,306 +45,590 @@
         "sameAs": []
       }
     </script>
-</head>
+  </head>
 
-<body>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <div class="logo">CEAA</div>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a href="index.html" class="logo">CEAA</a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
 
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html">Accueil</a>
-        <!-- <a href="pages/formations.html">Formations</a> -->
-        <a href="pages/actualites.html">Actualités</a>
-        <a href="pages/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Accueil</a></li>
 
-  <section class="hero" tabindex="0" aria-label="Carrousel des départements de formation">
-    <div class="hero-content" id="hero-content">
-      <h1 id="hero-title" class="animate_animated animate_bounce">Cuisine & saveurs de Kpalimé et d'ailleurs</h1>
-      <p id="hero-description">
-        Techniques culinaires, hygiène et recettes locales pour créer des
-        plats d'exception.
-      </p>
-      <a class="cta" id="hero-cta" href="#formations" aria-label="Découvrir les formations du CEAA">
-        Découvrez nos formations
-      </a>
-    </div>
+          <!-- MENU DÉROULANT FORMATIONS -->
+          <li class="dropdown" id="formationsDropdown">
+            <a href="#">Formations</a>
+            <ul class="dropdown-menu">
+              <li><a href="formations/poterie.html">🏺 Poterie</a></li>
+              <li><a href="formations/sculpture.html">🗿 Sculpture</a></li>
+              <li><a href="formations/peinture.html">🎨 Peinture</a></li>
+              <li><a href="formations/batik.html">🖌️ Batik & Teinture</a></li>
+              <li>
+                <a href="formations/couture.html">🧵 Couture & Modélisme</a>
+              </li>
+              <li>
+                <a href="formations/cuisine.html">🍳 Cuisine & Gastronomie</a>
+              </li>
+              <li>
+                <a href="formations/musique.html">🥁 Musique & Lutherie</a>
+              </li>
+              <li>
+                <a href="formations/tissage.html">🪢 Tissage & Tapisserie</a>
+              </li>
+            </ul>
+          </li>
 
-    <div class="hero-dots" id="hero-dots" aria-label="Choisir un département de formation"></div>
+          <li><a href="actualites.html">Actualités</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </header>
 
-  </section>
-
-  <main class="container">
-    <section class="block two-col">
-      <div class="block-item">
-        <h3>Mot du directeur</h3>
-        <p>
-          Bienvenue au CEAA, centre d'excellence où cuisine, batik, couture et
-          sculpture se rencontrent. Nous formons les talents et exposons des
-          œuvres d’exception.
+    <section
+      class="hero"
+      tabindex="0"
+      aria-label="Carrousel des départements de formation"
+    >
+      <div class="hero-content" id="hero-content">
+        <h1 id="hero-title" class="animate_animated animate_bounce">
+          Cuisine & saveurs de Kpalimé et d'ailleurs
+        </h1>
+        <p id="hero-description">
+          Techniques culinaires, hygiène et recettes locales pour créer des
+          plats d'exception.
         </p>
-        <a href="pages/formateurs.html" class="small-btn">Rencontrez nos formateurs</a>
+        <a
+          class="cta"
+          id="hero-cta"
+          href="#formations"
+          aria-label="Découvrir les formations du CEAA"
+        >
+          Découvrez nos formations
+        </a>
       </div>
-      <div class="block-item">
-        <img src="img/directeur_actuel.png" alt="Icone directeur CEAA" />
-      </div>
+
+      <div
+        class="hero-dots"
+        id="hero-dots"
+        aria-label="Choisir un département de formation"
+      ></div>
     </section>
 
-    <section id="formations" class="block">
-      <h2>Nos formations</h2>
-
-      <div class="cards">
-
-        <article class="card">
-          <img src="img/icone/icuisine.png" alt="Cuisine CEAA" />
-          <h4>Cuisine</h4>
-          <p>Arts culinaires locaux. <a href="../formations/cuisine.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/ibatik.png" alt="Batik CEAA" />
-          <h4>Batik</h4>
-          <p>Tissus artisanaux teints à la main. <a href="../formations/batik.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/icouture.png" alt="Couture CEAA" />
-          <h4>Couture</h4>
-          <p>Mode, stylisme et couture traditionnelle <a href="../formations/couture.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/isculpture.png" alt="Sculpture CEAA" />
-          <h4>Sculpture</h4>
-          <p>Créations sur bois, pierre et métal. <a href="../formations/sculpture.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/itissage.png" alt="Tissage CEAA" />
-          <h4>Tissage</h4>
-          <p>Techniques de tissage traditionnelles et modernes. <a href="../formations/tissage.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/ipeinture.png" alt="Peinture CEAA" />
-          <h4>Peinture</h4>
-          <p>Méthodes de peinture sur toile, mur et matériaux artisanaux. <a href="../formations/peinture.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/ipoterie.png" alt="Poterie CEAA" />
-          <h4>Poterie</h4>
-          <p>Travail de l’argile, modelage et cuisson d’objets. <a href="../formations/poterie.html">→</a></p>
-        </article>
-
-        <article class="card">
-          <img src="img/icone/imusique.png" alt="Musique CEAA" />
-          <h4>Musique</h4>
-          <p>Atelier chant et percussions pour sons traditionnels. <a href="../formations/musique.html">→</a></p>
-        </article>
-
-      </div>
-      <!-- <a href="pages/formations.html" class="small-btn">Voir la page des formations</a> -->
-    </section>
-
-    <section id="produits" class="block">
-      <div class="container">
-        <div class="section-header">
-          <h2>Produits phares</h2>
-          <p>Découvrez les créations artisanales les plus remarquables de nos ateliers</p>
-        </div>
-
-        <section class="gallery-container">
-
-          <div class="bubble bubble-lg main-person">
-            <img src="/img/produits phares/tenue_femme.jpg" alt="Directeur Créatif">
-            <div class="bubble-overlay"></div>
-            <div class="bubble-description">
-              <h3>Thomas Dubois</h3>
-              <p>Directeur Artistique & Fondateur</p>
-            </div>
-          </div>
-
-          <div class="bubble bubble-sm item-top-left">
-            <img src="/img/produits phares/plat1.jpg" alt="Sweater Mockup">
-            <div class="bubble-overlay"></div>
-            <div class="bubble-description">
-              <h3>Maquette Pull</h3>
-              <p>Design Textile</p>
-            </div>
-          </div>
-
-          <div class="bubble bubble-md item-mid-left">
-            <img src="/img/produits phares/plat2.jpg" alt="A4 Magazine Mockup">
-            <div class="bubble-overlay"></div>
-            <div class="bubble-description">
-              <h3>Magazines A4</h3>
-              <p>Édition & Print</p>
-            </div>
-          </div>
-
-          <div class="bubble bubble-sm item-top-right">
-            <img src="/img/produits phares/robe-tisse.webp" alt="UX/UI Design">
-            <div class="bubble-overlay"></div>
-            <div class="bubble-description">
-              <h3>UX/UI Design</h3>
-              <p>Interfaces Mobiles</p>
-            </div>
-          </div>
-
-          <div class="bubble bubble-sm item-mid-right">
-            <img src="/img/produits phares/pagne.jpg" alt="Business Card Mockup">
-            <div class="bubble-overlay"></div>
-            <div class="bubble-description">
-              <h3>Cartes de Visite</h3>
-              <p>Identité Pro</p>
-            </div>
-          </div>
-
-          <div class="deco-circle red-ring"></div>
-          <div class="deco-circle gradient-ball"></div>
-          <div class="deco-circle green-ring"></div>
-          <div class="deco-circle gradient-square"></div>
-
-        </section>
-
-      </div>
-    </section>
-
-    <section id="meilleures-ventes" class="block">
-      <div class="container">
-        <div class="section-header">
-          <h2>Meilleures ventes</h2>
+    <main class="container">
+      <section class="block two-col">
+        <div class="block-item">
+          <h3>Mot du directeur</h3>
           <p>
-            Découvrez nos produits les plus populaires, plébiscités par nos
-            clients et visiteurs.
+            Bienvenue au CEAA, centre d'excellence où cuisine, batik, couture et
+            sculpture se rencontrent. Nous formons les talents et exposons des
+            œuvres d’exception.
           </p>
+          <a href="pages/formateurs.html" class="small-btn"
+            >Rencontrez nos formateurs</a
+          >
         </div>
+        <div class="block-item">
+          <img src="img/directeur_actuel.png" alt="Icone directeur CEAA" />
+        </div>
+      </section>
 
-        <div class="products-carousel">
-          <button class="carousel-btn prev" aria-label="Précédent">❮</button>
-          <div class="carousel-container">
-            <div class="carousel-track" id="carouselTrack">
-              <!-- slide 1 -->
-              <div class="carousel-slide">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="img/pagne1.jpg" alt="Tapisserie Batik Royal" />
-                    <span class="product-tag">⭐ Top vente</span>
-                  </div>
-                  <div class="product-info">
-                    <h4>Tapisserie Batik Royal</h4>
-                    <p>
-                      Produit le plus demandé par les visiteurs
-                      internationaux.
-                    </p>
-                    <a href="#" class="btn-outline">Découvrir</a>
-                  </div>
-                </div>
-              </div>
-              <!-- slide 2 -->
-              <div class="carousel-slide">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="img/cuisine2.png" alt="culinaire Kpalimé" />
-                    <span class="product-tag">🔥 Best seller</span>
-                  </div>
-                  <div class="product-info">
-                    <h4>Assortiment culinaire « Kpalimé »</h4>
-                    <p>
-                      Top vente depuis 2025 pour cadeau d’entreprise et
-                      événements.
-                    </p>
-                    <a href="#" class="btn-outline">Découvrir</a>
-                  </div>
-                </div>
-              </div>
-              <!-- slide 3 -->
-              <div class="carousel-slide">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
-                    <span class="product-tag">✨ Coup de cœur</span>
-                  </div>
-                  <div class="product-info">
-                    <h4>Ensemble couture moderne</h4>
-                    <p>Meilleure vente dans la catégorie mode régionale.</p>
-                    <a href="#" class="btn-outline">Découvrir</a>
-                  </div>
-                </div>
-              </div>
-              <!-- slide 4 -->
-              <div class="carousel-slide">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
-                    <span class="product-tag">✨ Coup de cœur</span>
-                  </div>
-                  <div class="product-info">
-                    <h4>Ensemble couture moderne</h4>
-                    <p>Meilleure vente dans la catégorie mode régionale.</p>
-                    <a href="#" class="btn-outline">Découvrir</a>
-                  </div>
-                </div>
-              </div>
-              <!-- slide 5 -->
-              <div class="carousel-slide">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
-                    <span class="product-tag">✨ Coup de cœur</span>
-                  </div>
-                  <div class="product-info">
-                    <h4>Ensemble couture moderne</h4>
-                    <p>Meilleure vente dans la catégorie mode régionale.</p>
-                    <a href="#" class="btn-outline">Découvrir</a>
-                  </div>
-                </div>
-              </div>
-              <!-- slide 6 -->
-              <div class="carousel-slide">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img src="img/couture.jpg" alt="Ensemble couture moderne" />
-                    <span class="product-tag">✨ Coup de cœur</span>
-                  </div>
-                  <div class="product-info">
-                    <h4>Ensemble couture moderne</h4>
-                    <p>Meilleure vente dans la catégorie mode régionale.</p>
-                    <a href="#" class="btn-outline">Découvrir</a>
-                  </div>
-                </div>
-              </div>
-              <!-- ajoute d'autres slides ici -->
+      <section class="cursus-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos formations diplômantes</h2>
+                <p>Des cursus professionnels reconnus par l'État pour réussir votre avenir</p>
             </div>
+            
+            <div class="cursus-grid">
+                <!-- Carte CAP -->
+                <div class="cursus-card cap-card">
+                    <div class="card-header">
+                        <div class="diploma-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>CAP</h3>
+                        <p class="diploma-fullname">Certificat d'Aptitude Professionnelle</p>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="info-badge">
+                            <i class="fas fa-clock"></i>
+                            <span>2 ans</span>
+                        </div>
+                        <div class="info-badge">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Niveau 3 (CEP)</span>
+                        </div>
+                        
+                        <div class="description">
+                            <p>Le CAP est une formation professionnelle de base qui permet d'acquérir les compétences nécessaires pour exercer un métier spécifique dans l'artisanat et les arts appliqués.</p>
+                        </div>
+                        
+                        <div class="objectives">
+                            <h4><i class="fas fa-bullseye"></i> Objectifs :</h4>
+                            <ul>
+                                <li>Maîtriser les techniques fondamentales du métier</li>
+                                <li>Développer l'autonomie professionnelle</li>
+                                <li>Préparer à l'insertion directe dans la vie active</li>
+                                <li>Acquérir les bases de la gestion d'un petit atelier</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="specialties">
+                            <h4><i class="fas fa-palette"></i> Spécialités proposées :</h4>
+                            <div class="tags">
+                                <span>Ébénisterie</span>
+                                <span>Sculpture</span>
+                                <span>Céramique</span>
+                                <span>Tapisserie</span>
+                                <span>Bijouterie</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a href="#formations" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+                
+                <!-- Carte BT -->
+                <div class="cursus-card bt-card">
+                    <div class="card-header">
+                        <div class="diploma-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>BT</h3>
+                        <p class="diploma-fullname">Brevet de Technicien</p>
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="info-badge">
+                            <i class="fas fa-clock"></i>
+                            <span>2 ans (après CAP)</span>
+                        </div>
+                        <div class="info-badge">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Niveau 4 (Bac)</span>
+                        </div>
+                        
+                        <div class="description">
+                            <p>Le BT est une formation supérieure qui approfondit les compétences techniques et ajoute une dimension de conception, d'encadrement et de gestion.</p>
+                        </div>
+                        
+                        <div class="objectives">
+                            <h4><i class="fas fa-bullseye"></i> Objectifs :</h4>
+                            <ul>
+                                <li>Maîtriser les techniques avancées du métier</li>
+                                <li>Développer des compétences en conception et création</li>
+                                <li>Acquérir les bases de l'encadrement d'équipe</li>
+                                <li>Préparer à la création ou reprise d'entreprise</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="specialties">
+                            <h4><i class="fas fa-palette"></i> Spécialités proposées :</h4>
+                            <div class="tags">
+                                <span>Arts appliqués</span>
+                                <span>Design d'espace</span>
+                                <span>Métiers d'art</span>
+                                <span>Restoration</span>
+                                <span>Artisanat d'art</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a href="#formations" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Section comparatif -->
+            <div class="comparison-section">
+                <h3><i class="fas fa-chart-line"></i> CAP vs BT : Quelle différence ?</h3>
+                <div class="comparison-table">
+                    <div class="comparison-item">
+                        <div class="comparison-criterion">Niveau</div>
+                        <div class="cap-value">Niveau 3 (fin 3ème)</div>
+                        <div class="bt-value">Niveau 4 (Bac)</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-criterion">Durée</div>
+                        <div class="cap-value">2 ans</div>
+                        <div class="bt-value">2 ans (après CAP)</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-criterion">Objectif principal</div>
+                        <div class="cap-value">Exécution technique</div>
+                        <div class="bt-value">Conception + encadrement</div>
+                    </div>
+                    <div class="comparison-item">
+                        <div class="comparison-criterion">Débouchés</div>
+                        <div class="cap-value">Artisan, ouvrier qualifié</div>
+                        <div class="bt-value">Technicien supérieur, chef d'atelier</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to action -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h3>Prêt à construire votre avenir ?</h3>
+                    <p>Inscriptions ouvertes pour la rentrée prochaine. Places limitées par atelier.</p>
+                    <div class="cta-buttons">
+                        <a href="pages/inscription.html" class="btn btn-large">S'inscrire maintenant</a>
+                        <a href="pages/contact.html" class="btn btn-outline">Demander une documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+      <section id="formations" class="block">
+        <h2>Nos formations</h2>
+
+        <div class="cards">
+          <article class="card">
+            <img src="img/icone/icuisine.png" alt="Cuisine CEAA" />
+            <h4>Cuisine</h4>
+            <p>
+              Arts culinaires locaux. <a href="../formations/cuisine.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/ibatik.png" alt="Batik CEAA" />
+            <h4>Batik</h4>
+            <p>
+              Tissus artisanaux teints à la main.
+              <a href="../formations/batik.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/icouture.png" alt="Couture CEAA" />
+            <h4>Couture</h4>
+            <p>
+              Mode, stylisme et couture traditionnelle
+              <a href="../formations/couture.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/isculpture.png" alt="Sculpture CEAA" />
+            <h4>Sculpture</h4>
+            <p>
+              Créations sur bois, pierre et métal.
+              <a href="../formations/sculpture.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/itissage.png" alt="Tissage CEAA" />
+            <h4>Tissage</h4>
+            <p>
+              Techniques de tissage traditionnelles et modernes.
+              <a href="../formations/tissage.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/ipeinture.png" alt="Peinture CEAA" />
+            <h4>Peinture</h4>
+            <p>
+              Méthodes de peinture sur toile, mur et matériaux artisanaux.
+              <a href="../formations/peinture.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/ipoterie.png" alt="Poterie CEAA" />
+            <h4>Poterie</h4>
+            <p>
+              Travail de l’argile, modelage et cuisson d’objets.
+              <a href="../formations/poterie.html">→</a>
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icone/imusique.png" alt="Musique CEAA" />
+            <h4>Musique</h4>
+            <p>
+              Atelier chant et percussions pour sons traditionnels.
+              <a href="../formations/musique.html">→</a>
+            </p>
+          </article>
+        </div>
+        <!-- <a href="pages/formations.html" class="small-btn">Voir la page des formations</a> -->
+      </section>
+
+      <section id="produits" class="block">
+        <div class="container">
+          <div class="section-header">
+            <h2>Produits phares</h2>
+            <p>
+              Découvrez les créations artisanales les plus remarquables de nos
+              ateliers
+            </p>
           </div>
-          <button class="carousel-btn next" aria-label="Suivant">❯</button>
+
+          <section class="gallery-container">
+            <div class="bubble bubble-lg main-person">
+              <img
+                src="/img/produits phares/tenue_femme.jpg"
+                alt="Directeur Créatif"
+              />
+              <div class="bubble-overlay"></div>
+              <div class="bubble-description">
+                <h3>Thomas Dubois</h3>
+                <p>Directeur Artistique & Fondateur</p>
+              </div>
+            </div>
+
+            <div class="bubble bubble-sm item-top-left">
+              <img src="/img/produits phares/plat1.jpg" alt="Sweater Mockup" />
+              <div class="bubble-overlay"></div>
+              <div class="bubble-description">
+                <h3>Maquette Pull</h3>
+                <p>Design Textile</p>
+              </div>
+            </div>
+
+            <div class="bubble bubble-md item-mid-left">
+              <img
+                src="/img/produits phares/plat2.jpg"
+                alt="A4 Magazine Mockup"
+              />
+              <div class="bubble-overlay"></div>
+              <div class="bubble-description">
+                <h3>Magazines A4</h3>
+                <p>Édition & Print</p>
+              </div>
+            </div>
+
+            <div class="bubble bubble-sm item-top-right">
+              <img
+                src="/img/produits phares/robe-tisse.webp"
+                alt="UX/UI Design"
+              />
+              <div class="bubble-overlay"></div>
+              <div class="bubble-description">
+                <h3>UX/UI Design</h3>
+                <p>Interfaces Mobiles</p>
+              </div>
+            </div>
+
+            <div class="bubble bubble-sm item-mid-right">
+              <img
+                src="/img/produits phares/pagne.jpg"
+                alt="Business Card Mockup"
+              />
+              <div class="bubble-overlay"></div>
+              <div class="bubble-description">
+                <h3>Cartes de Visite</h3>
+                <p>Identité Pro</p>
+              </div>
+            </div>
+
+            <div class="deco-circle red-ring"></div>
+            <div class="deco-circle gradient-ball"></div>
+            <div class="deco-circle green-ring"></div>
+            <div class="deco-circle gradient-square"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="meilleures-ventes" class="block">
+        <div class="container">
+          <div class="section-header">
+            <h2>Meilleures ventes</h2>
+            <p>
+              Découvrez nos produits les plus populaires, plébiscités par nos
+              clients et visiteurs.
+            </p>
+          </div>
+
+          <div class="products-carousel">
+            <button class="carousel-btn prev" aria-label="Précédent">❮</button>
+            <div class="carousel-container">
+              <div class="carousel-track" id="carouselTrack">
+                <!-- slide 1 -->
+                <div class="carousel-slide">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="img/pagne1.jpg" alt="Tapisserie Batik Royal" />
+                      <span class="product-tag">⭐ Top vente</span>
+                    </div>
+                    <div class="product-info">
+                      <h4>Tapisserie Batik Royal</h4>
+                      <p>
+                        Produit le plus demandé par les visiteurs
+                        internationaux.
+                      </p>
+                      <a href="#" class="btn-outline">Découvrir</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 2 -->
+                <div class="carousel-slide">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img src="img/cuisine2.png" alt="culinaire Kpalimé" />
+                      <span class="product-tag">🔥 Best seller</span>
+                    </div>
+                    <div class="product-info">
+                      <h4>Assortiment culinaire « Kpalimé »</h4>
+                      <p>
+                        Top vente depuis 2025 pour cadeau d’entreprise et
+                        événements.
+                      </p>
+                      <a href="#" class="btn-outline">Découvrir</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 3 -->
+                <div class="carousel-slide">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="img/couture.jpg"
+                        alt="Ensemble couture moderne"
+                      />
+                      <span class="product-tag">✨ Coup de cœur</span>
+                    </div>
+                    <div class="product-info">
+                      <h4>Ensemble couture moderne</h4>
+                      <p>Meilleure vente dans la catégorie mode régionale.</p>
+                      <a href="#" class="btn-outline">Découvrir</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 4 -->
+                <div class="carousel-slide">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="img/couture.jpg"
+                        alt="Ensemble couture moderne"
+                      />
+                      <span class="product-tag">✨ Coup de cœur</span>
+                    </div>
+                    <div class="product-info">
+                      <h4>Ensemble couture moderne</h4>
+                      <p>Meilleure vente dans la catégorie mode régionale.</p>
+                      <a href="#" class="btn-outline">Découvrir</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 5 -->
+                <div class="carousel-slide">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="img/couture.jpg"
+                        alt="Ensemble couture moderne"
+                      />
+                      <span class="product-tag">✨ Coup de cœur</span>
+                    </div>
+                    <div class="product-info">
+                      <h4>Ensemble couture moderne</h4>
+                      <p>Meilleure vente dans la catégorie mode régionale.</p>
+                      <a href="#" class="btn-outline">Découvrir</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- slide 6 -->
+                <div class="carousel-slide">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="img/couture.jpg"
+                        alt="Ensemble couture moderne"
+                      />
+                      <span class="product-tag">✨ Coup de cœur</span>
+                    </div>
+                    <div class="product-info">
+                      <h4>Ensemble couture moderne</h4>
+                      <p>Meilleure vente dans la catégorie mode régionale.</p>
+                      <a href="#" class="btn-outline">Découvrir</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- ajoute d'autres slides ici -->
+              </div>
+            </div>
+            <button class="carousel-btn next" aria-label="Suivant">❯</button>
+          </div>
+
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>CEAA - Centre d'enseignement artisanal et artistique de Kpalimé</p>
+
+        <div class="footer-links">
+          <a href="#formations">Formations</a>
+          <a href="#produits">Produits</a>
+          <a href="pages/formateurs.html">Formateurs</a>
         </div>
 
-        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="social-links">
+          <a
+            href="https://facebook.com/ceaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a
+            href="https://instagram.com/ceaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a
+            href="https://linkedin.com/company/ceaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          <a
+            href="https://twitter.com/ceaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a
+            href="https://youtube.com/ceaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i> YouTube
+          </a>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2024 CEAA - Tous droits réservés</p>
+        </div>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>CEAA - Centre d'enseignement artisanal et artistique de Kpalimé</p>
-      <div class="footer-links">
-        <a href="#formations">Formations</a>
-        <a href="#produits">Produits</a>
-        <a href="pages/formateurs.html">Formateurs</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/caroussel.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>

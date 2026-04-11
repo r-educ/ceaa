@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Batik & Teinture | CEAA</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/sc_form.css" />
+
     <style>
       /* Réutilisation du style de poterie avec légères variantes */
       :root {
@@ -13,246 +15,44 @@
         --secondary: #2c3e50;
         --light-bg: #fef9e8;
       }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Segoe UI", sans-serif;
-        line-height: 1.6;
-      }
-      .site-header {
-        background: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .nav-wrap {
-        max-width: 1280px;
-        margin: auto;
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary);
-      }
-      .menu-toggle {
-        display: none;
-        background: none;
-        border: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-      }
-      .menu-toggle span {
-        width: 28px;
-        height: 3px;
-        background: #333;
-        border-radius: 3px;
-      }
-      .nav-menu {
-        display: flex;
-        gap: 2rem;
-      }
-      .nav-menu a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-      }
-      .nav-menu a:hover {
-        color: var(--primary);
-      }
       .hero-banner {
-        background: linear-gradient(135deg, #1e2a3a, #0f1722);
-        color: white;
-        padding: 4rem 2rem;
-        text-align: center;
-      }
-      .hero-content {
-        max-width: 900px;
-        margin: auto;
-      }
-      .hero-content h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 3rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-      }
-      .stat-number {
-        font-size: 2rem;
-        font-weight: bold;
-        color: var(--primary);
-        display: block;
-      }
-      .container {
-        max-width: 1280px;
-        margin: auto;
-        padding: 3rem 2rem;
-      }
-      .partners-title {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .partners-title h3 {
-        font-size: 2rem;
-        color: var(--secondary);
-      }
-      .partners-carousel {
-        overflow: hidden;
-      }
-      .partners-track {
-        display: flex;
-        gap: 2rem;
-        animation: scroll 20s linear infinite;
-        width: fit-content;
-      }
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-      .partner-item {
-        background: white;
-        padding: 1rem;
-        border-radius: 12px;
-        min-width: 140px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-      .equipment-grid,
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 2rem;
-        margin: 2rem 0;
-      }
-      .equipment-card {
-        background: var(--light-bg);
-        padding: 1.5rem;
-        border-radius: 20px;
-        text-align: center;
-        transition: 0.3s;
-      }
-      .equipment-card img {
-        width: 70px;
-        height: 70px;
-        object-fit: contain;
-        margin-bottom: 1rem;
-      }
-      .gallery-item {
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-        aspect-ratio: 4/3;
-      }
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      .gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(transparent, black);
-        padding: 1rem;
-        color: white;
-      }
-      .cta-section {
-        background: var(--primary);
-        border-radius: 30px;
-        padding: 3rem;
-        text-align: center;
-        color: white;
-        margin: 3rem 0;
-      }
-      .btn-cta {
-        background: white;
-        color: var(--primary);
-        padding: 0.8rem 2rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-      }
-      .back-button {
-        text-align: center;
-        margin: 2rem;
-      }
-      .btn-back {
-        background: var(--secondary);
-        color: white;
-        padding: 0.7rem 1.8rem;
-        border-radius: 40px;
-        text-decoration: none;
-      }
-      .site-footer {
-        background: var(--secondary);
-        color: white;
-        text-align: center;
-        padding: 2rem;
-        margin-top: 2rem;
-      }
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 1rem;
-      }
-      .footer-links a {
-        color: white;
-        text-decoration: none;
-      }
-      @media (max-width: 768px) {
-        .menu-toggle {
-          display: flex;
-        }
-        .nav-menu {
-          display: none;
-          flex-direction: column;
-          background: white;
-          position: absolute;
-          top: 70px;
-          left: 0;
-          right: 0;
-          padding: 1rem;
-        }
-        .nav-menu.active {
-          display: flex;
-        }
-        .hero-content h1 {
-          font-size: 2rem;
-        }
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+          url("../img/batik/hero_batik.webp");
       }
     </style>
+
   </head>
   <body>
     <header class="site-header">
       <div class="nav-wrap">
-        <div class="logo">CEAA</div>
-        <button class="menu-toggle" id="menuToggle">
+        <a href="../index.html" class="logo">CEAA</a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
-        <nav class="nav-menu">
-          <a href="../index.html">Accueil</a
-          ><a href="actualites.html">Actualités</a
-          ><a href="contact.html">Contact</a>
-        </nav>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html">Accueil</a></li>
+
+          <!-- MENU DÉROULANT FORMATIONS -->
+          <li class="dropdown" id="formationsDropdown">
+            <a href="#">Formations</a>
+            <ul class="dropdown-menu">
+              <li><a href="poterie.html">🏺 Poterie</a></li>
+              <li><a href="sculpture.html">🗿 Sculpture</a></li>
+              <li><a href="peinture.html">🎨 Peinture</a></li>
+              <li><a href="batik.html">🖌️ Batik & Teinture</a></li>
+              <li><a href="couture.html">🧵 Couture & Modélisme</a></li>
+              <li><a href="cuisine.html">🍳 Cuisine & Gastronomie</a></li>
+              <li><a href="musique.html">🥁 Musique & Lutherie</a></li>
+              <li><a href="tissage.html">🪢 Tissage & Tapisserie</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../pages/actualites.html">Actualités</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
       </div>
     </header>
     <main>
@@ -397,7 +197,7 @@
         </section>
         <div class="back-button">
           <a href="../index.html#formations" class="btn-back"
-            >← Retour aux formations</a
+            >←</a
           >
         </div>
       </div>
