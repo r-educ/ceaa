@@ -9,18 +9,34 @@
 <body>
   <header class="site-header">
     <div class="nav-wrap">
-      <div class="logo">CEAA</div>
-      
+      <a href="../index.html" class="logo">CEAA</a>
+
       <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav-menu" id="navMenu">
-        <a href="../index.html">Accueil</a>
-        <a href="formations.html">Formations</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <!-- BARRE DE NAVIGATION -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html">Accueil</a></li>
+
+        <!-- MENU DÉROULANT FORMATIONS -->
+        <li class="dropdown" id="formationsDropdown">
+          <a href="#">Formations</a>
+          <ul class="dropdown-menu">
+            <li><a href="../formations/poterie.html">🏺 Poterie</a></li>
+            <li><a href="../formations/sculpture.html">🗿 Sculpture</a></li>
+            <li><a href="../formations/peinture.html">🎨 Peinture</a></li>
+            <li><a href="../formations/batik.html">🖌️ Batik & Teinture</a></li>
+            <li><a href="../formations/couture.html">🧵 Couture & Modélisme</a></li>
+            <li><a href="../formations/cuisine.html">🍳 Cuisine & Gastronomie</a></li>
+            <li><a href="../formations/musique.html">🥁 Musique & Lutherie</a></li>
+            <li><a href="../formations/tissage.html">🪢 Tissage & Tapisserie</a></li>
+          </ul>
+        </li>
+
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
@@ -163,7 +179,9 @@
       <p>© CEAA Kpalimé - Tous droits réservés</p>
       <div class="footer-links">
         <a href="../index.html">Accueil</a>
-        <a href="formations.html">Formations</a>
+        <a href="../index.html#formations">Formations</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="formateurs.html">Formateurs</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
@@ -178,6 +196,6 @@
       });
     });
   </script>
-  <script src="../js/caroussel.js"></script>
+  <script src="../js/formation.js"></script>
 </body>
 </html>

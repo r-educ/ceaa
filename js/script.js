@@ -16,7 +16,7 @@
       title: "Cuisine & saveurs de Kpalimé et d'ailleurs",
       description:
         "Techniques culinaires, hygiène et recettes locales pour créer des plats d'exception.",
-      bg: "/img/cuisine.jpeg", // Chemin local sans url()
+      bg: "../img/cuisine.jpeg", // Chemin local sans url()
       grad1: "rgba(196, 87, 47, 0.85)",
       grad2: "rgba(125, 60, 31, 0.75)",
       ctaLink: "#formations",
@@ -25,7 +25,7 @@
       title: "Batik : motifs & teinture à la main",
       description:
         "Création et teinture de tissus, entre motifs traditionnels et inspirations contemporaines.",
-      bg: "/img/batik.jpg", // Chemin local sans url()
+      bg: "../img/batik.jpg", // Chemin local sans url()
       grad1: "rgba(87, 98, 196, 0.85)",
       grad2: "rgba(61, 44, 125, 0.75)",
       ctaLink: "#formations",
@@ -34,7 +34,7 @@
       title: "Couture : design et mode éthique",
       description:
         "Patronage, confection et stylisme pour des créations solides et respectueuses des savoir-faire.",
-      bg: "/img/couture.jpg", // Chemin local sans url()
+      bg: "../img/couture.jpg", // Chemin local sans url()
       grad1: "rgba(92, 158, 122, 0.85)",
       grad2: "rgba(35, 92, 62, 0.75)",
       ctaLink: "#formations",
@@ -43,7 +43,7 @@
       title: "Sculpture : bois, pierre et métal",
       description:
         "Modelage et gravure pour créer des œuvres durables et expressives.",
-      bg: "/img/sculpture.jpg", // Chemin local sans url()
+      bg: "../img/sculpture.jpg", // Chemin local sans url()
       grad1: "rgba(168, 122, 60, 0.85)",
       grad2: "rgba(95, 60, 25, 0.75)",
       ctaLink: "#formations",
@@ -52,7 +52,7 @@
       title: "Tissage : textiles et créations innovantes",
       description:
         "Techniques de tissage traditionnelles et motifs modernes pour produire des pièces uniques.",
-      bg: "/img/pagne-tisse.jpg", // Chemin local sans url()
+      bg: "../img/pagne-tisse.jpg", // Chemin local sans url()
       grad1: "rgba(180, 104, 150, 0.85)",
       grad2: "rgba(115, 50, 87, 0.75)",
       ctaLink: "#formations",
@@ -61,7 +61,7 @@
       title: "Peinture : couleurs & inspiration locale",
       description:
         "Atelier de peinture et peinture décorative inspirée de l'art et de la culture de la région.",
-      bg: "/img/peinture.png", // Chemin local sans url()
+      bg: "../img/peinture.webp", // Chemin local sans url()
       grad1: "rgba(62, 114, 154, 0.85)",
       grad2: "rgba(35, 70, 104, 0.75)",
       ctaLink: "#formations",
@@ -70,16 +70,16 @@
       title: "Poterie : modelage & cuisson",
       description:
         "Modélisation de l'argile, cuisson en four et création d'objets en céramique.",
-      bg: "/img/poterie/poterie.jpg", // Chemin local sans url()
+      bg: "../img/poterie.jpg", // Chemin local sans url()
       grad1: "rgba(214, 134, 82, 0.85)",
       grad2: "rgba(125, 75, 35, 0.75)",
-      ctaLink: "#formation",
+      ctaLink: "#formations",
     },
     {
       title: "Musique : rythmes & culture",
       description:
         "Atelier chant, percussions et rythmes locaux pour une expérience culturelle vivante.",
-      bg: "/img/musique.jpg", // Chemin local sans url()
+      bg: "../img/musique.jpg", // Chemin local sans url()
       grad1: "rgba(120, 170, 210, 0.85)",
       grad2: "rgba(45, 95, 140, 0.75)",
       ctaLink: "#formations",
@@ -112,7 +112,7 @@
     testImg.onload = function () {
       if (reqId !== setHeroBg._reqId) return;
       heroEl.style.setProperty("--hero-bg-image", bgUrl);
-      console.log(`Image chargée avec succès: ${imagePath}`);
+      // console.log(`Image chargée avec succès: ${imagePath}`);
     };
     testImg.onerror = function () {
       if (reqId !== setHeroBg._reqId) return;
@@ -295,8 +295,8 @@
 
 (function() {
     const track = document.getElementById('carouselTrack');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
     const dotsContainer = document.getElementById('carouselDots');
     
     if (!track || !prevBtn || !nextBtn || !dotsContainer) return;
@@ -446,23 +446,16 @@
       }, 250);
     });
     
-// Menu toggle pour mobile
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-if (menuToggle && navMenu) {
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-}
-
 // Gestion du dropdown sur mobile (clic)
 const dropdown = document.getElementById('formationsDropdown');
-if (dropdown && window.innerWidth <= 768) {
+if (dropdown) {
   dropdown.addEventListener('click', (e) => {
-    if (e.target === dropdown.querySelector('a') || dropdown.contains(e.target)) {
-      e.preventDefault();
-      dropdown.classList.toggle('active');
+    if (window.innerWidth <= 768) {
+      // Si on clique sur le lien principal "Formations", on empêche la navigation par défaut
+      if (e.target.tagName === 'A' && (e.target.getAttribute('href') === '#' || e.target.parentElement.classList.contains('dropdown'))) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
     }
   });
 }

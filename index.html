@@ -21,7 +21,7 @@
     />
     <meta
       property="og:image"
-      content="https://<votre-site>.github.io/vitrine-ceaa/img/hero.png"
+      content="https://votre-site.github.io/vitrine-ceaa/img/hero.png"
     />
     <meta property="og:type" content="website" />
     <title>CEAA - Centre d'Enseignement Artisanal et Artistique</title>
@@ -48,6 +48,7 @@
   </head>
 
   <body>
+
     <header class="site-header">
       <div class="nav-wrap">
         <a href="index.html" class="logo">CEAA</a>
@@ -56,6 +57,7 @@
           <span></span><span></span><span></span>
         </button>
 
+        <!-- BARRE DE NAVIGATION -->
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Accueil</a></li>
 
@@ -82,11 +84,13 @@
             </ul>
           </li>
 
-          <li><a href="/pages/actualites.html">Actualités</a></li>
-          <li><a href="/pages/contact.html">Contact</a></li>
+          <li><a href="pages/actualites.html">Actualités</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
         </ul>
       </div>
     </header>
+
+    <!-- BANNIERE -->
 
     <section
       class="hero"
@@ -106,9 +110,8 @@
           id="hero-cta"
           href="#formations"
           aria-label="Découvrir les formations du CEAA"
+          >Découvrez nos formations</a
         >
-          Découvrez nos formations
-        </a>
       </div>
 
       <div
@@ -119,27 +122,28 @@
     </section>
 
     <main class="container">
-      <section class="block two-col">
-        <div class="block-item">
+      <section class="block two-col glass-effect">
+        <div class="block-item mot">
           <h3>Mot du directeur</h3>
+          
           <p>
             Bienvenue au CEAA, centre d'excellence où cuisine, batik, couture et
             sculpture se rencontrent. Nous formons les talents et exposons des
-            œuvres d’exception.
+            œuvres d’exception. <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam doloremque cumque recusandae voluptatum eius, aliquid error temporibus, fugit ex, inventore hic numquam commodi nesciunt iusto libero asperiores corrupti? Natus, earum? <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit expedita totam molestiae maxime aspernatur consectetur ipsa obcaecati nihil at, veniam molestias nam. Vel, odio perferendis excepturi tempora quas tenetur rerum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus omnis veniam amet odio. Animi deleniti non suscipit distinctio placeat! Eaque atque itaque dolore doloremque ea sit iure esse magnam est!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim consequuntur, eos voluptates sit esse nihil magnam praesentium consectetur ea labore assumenda repellendus deserunt nesciunt veritatis nulla blanditiis! Officia, laudantium consectetur ipsam, doloribus voluptates cumque totam iste veniam cupiditate tenetur qui tempora obcaecati asperiores praesentium voluptatem laborum. Tempore, quaerat! Dolorem modi magnam earum natus sed, nobis tempora totam repellat enim odit sunt debitis atque laudantium fuga nulla hic ullam eligendi rem, labore, ab a sapiente dolores. Repellendus eos quasi magnam dolores nemo aperiam dolorum non tenetur, illum, sint sequi laboriosam voluptatem architecto. Sunt eum quis, nesciunt porro architecto laboriosam rerum accusantium, unde eligendi a omnis quo, quaerat doloribus id sed voluptate minima temporibus! Doloribus culpa officiis reiciendis corrupti quasi ipsum vero eaque veniam porro quod voluptatum voluptatibus in provident error nihil consequuntur, possimus eveniet deleniti. Facere corrupti iusto similique, nostrum laudantium fugiat eos minus quasi! Qui fugit id quos accusamus non?
           </p>
-          <a href="pages/formateurs.html" class="small-btn"
-            >Rencontrez nos formateurs</a
-          >
+          <!-- <a href="pages/formateurs.html" class="small-btn">Rencontrez nos formateurs</a> -->
         </div>
         <div class="block-item">
-          <img src="/img/directeur_actuel.png" alt="Icone directeur CEAA" />
+          <img src="img/Directeur_actuel.png" alt="Icone directeur CEAA" />
         </div>
       </section>
 
-      <section class="cursus-section">
-        <div class="container">
+      <!-- LES CURSUS DE FORMATIONS -->
+      <section class="block cursus-section">
+        <div class="">
           <div class="section-header">
-            <h2>Nos formations diplômantes</h2>
+            <h2>Diplomes préparés</h2>
             <p>
               Des cursus professionnels reconnus par l'État pour réussir votre
               avenir
@@ -150,9 +154,6 @@
             <!-- Carte CAP -->
             <div class="cursus-card cap-card">
               <div class="card-header">
-                <div class="diploma-icon">
-                  <i class="fas fa-certificate"></i>
-                </div>
                 <h3>CAP</h3>
                 <p class="diploma-fullname">
                   Certificat d'Aptitude Professionnelle
@@ -209,9 +210,6 @@
             <!-- Carte BT -->
             <div class="cursus-card bt-card">
               <div class="card-header">
-                <div class="diploma-icon">
-                  <i class="fas fa-trophy"></i>
-                </div>
                 <h3>BT</h3>
                 <p class="diploma-fullname">Brevet de Technicien</p>
               </div>
@@ -304,7 +302,7 @@
                 par atelier.
               </p>
               <div class="cta-buttons">
-                <a href="pages/inscription.html" class="btn btn-large"
+                <a href="pages/contact.html" class="btn btn-primary btn-large"
                   >S'inscrire maintenant</a
                 >
                 <a href="pages/contact.html" class="btn btn-outline"
@@ -317,84 +315,71 @@
       </section>
 
       <section id="formations" class="block">
-        <h2>Nos formations</h2>
+        <div class="section-header">
+          <h2>Formations Ouvertes</h2>
+        </div>
 
         <div class="cards">
           <article class="card">
-            <img src="img/icone/icuisine.png" alt="Cuisine CEAA" />
+            <a href="formations/cuisine.html">
+              <img src="img/icone/icuisine.png" alt="Cuisine CEAA"
+            /></a>
             <h4>Cuisine</h4>
-            <p>
-              Arts culinaires locaux. <a href="/formations/cuisine.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/ibatik.png" alt="Batik CEAA" />
+            <a href="formations/batik.html">
+              <img src="img/icone/ibatik.png" alt="Batik CEAA"
+            /></a>
             <h4>Batik</h4>
-            <p>
-              Tissus artisanaux teints à la main.
-              <a href="/formations/batik.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/icouture.png" alt="Couture CEAA" />
+            <a href="formations/couture.html">
+              <img src="img/icone/icouture.png" alt="Couture CEAA"
+            /></a>
             <h4>Couture</h4>
-            <p>
-              Mode, stylisme et couture traditionnelle
-              <a href="formations/couture.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/isculpture.png" alt="Sculpture CEAA" />
+            <a href="formations/sculpture.html">
+              <img src="img/icone/isculpture.png" alt="Sculpture CEAA"
+            /></a>
             <h4>Sculpture</h4>
-            <p>
-              Créations sur bois, pierre et métal.
-              <a href="/formations/sculpture.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/itissage.png" alt="Tissage CEAA" />
+            <a href="formations/tissage.html">
+              <img src="img/icone/itissage.png" alt="Tissage CEAA"
+            /></a>
             <h4>Tissage</h4>
-            <p>
-              Techniques de tissage traditionnelles et modernes.
-              <a href="/formations/tissage.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/ipeinture.png" alt="Peinture CEAA" />
+            <a href="formations/peinture.html">
+              <img src="img/icone/ipeinture.png" alt="Peinture CEAA"
+            /></a>
             <h4>Peinture</h4>
-            <p>
-              Méthodes de peinture sur toile, mur et matériaux artisanaux.
-              <a href="/formations/peinture.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/ipoterie.png" alt="Poterie CEAA" />
+            <a href="formations/poterie.html">
+              <img src="img/icone/ipoterie.png" alt="Poterie CEAA"
+            /></a>
             <h4>Poterie</h4>
-            <p>
-              Travail de l’argile, modelage et cuisson d’objets.
-              <a href="/formations/poterie.html">→</a>
-            </p>
           </article>
 
           <article class="card">
-            <img src="img/icone/imusique.png" alt="Musique CEAA" />
+            <a href="formations/musique.html">
+              <img src="img/icone/imusique.png" alt="Musique CEAA" />
+            </a>
             <h4>Musique</h4>
-            <p>
-              Atelier chant et percussions pour sons traditionnels.
-              <a href="/formations/musique.html">→</a>
-            </p>
           </article>
         </div>
       </section>
 
-      <section id="produits" class="block">
-        <div class="container">
+      <section id="produits-phares" class="block produits-phares">
+        <div class="">
           <div class="section-header">
             <h2>Produits phares</h2>
             <p>
@@ -406,7 +391,7 @@
           <section class="gallery-container">
             <div class="bubble bubble-lg main-person">
               <img
-                src="/img/produits_phares/tenue_femme.jpg"
+                src="img/produits_phares/tenue_femme.jpg"
                 alt="Directeur Créatif"
               />
               <div class="bubble-overlay"></div>
@@ -417,7 +402,7 @@
             </div>
 
             <div class="bubble bubble-sm item-top-left">
-              <img src="/img/produits_phares/plat1.jpg" alt="Sweater Mockup" />
+              <img src="img/produits_phares/plat1.jpg" alt="Sweater Mockup" />
               <div class="bubble-overlay"></div>
               <div class="bubble-description">
                 <h3>Maquette Pull</h3>
@@ -427,7 +412,7 @@
 
             <div class="bubble bubble-md item-mid-left">
               <img
-                src="/img/produits_phares/plat2.jpg"
+                src="img/produits_phares/plat2.jpg"
                 alt="A4 Magazine Mockup"
               />
               <div class="bubble-overlay"></div>
@@ -439,7 +424,7 @@
 
             <div class="bubble bubble-sm item-top-right">
               <img
-                src="/img/produits_phares/robe-tisse.webp"
+                src="img/produits_phares/robe-tisse.webp"
                 alt="UX/UI Design"
               />
               <div class="bubble-overlay"></div>
@@ -451,7 +436,7 @@
 
             <div class="bubble bubble-sm item-mid-right">
               <img
-                src="/img/produits_phares/pagne.jpg"
+                src="img/produits_phares/pagne.jpg"
                 alt="Business Card Mockup"
               />
               <div class="bubble-overlay"></div>
@@ -470,7 +455,7 @@
       </section>
 
       <section id="meilleures-ventes" class="block">
-        <div class="container">
+        <div class="">
           <div class="section-header">
             <h2>Meilleures ventes</h2>
             <p>
@@ -504,7 +489,7 @@
                 <div class="carousel-slide">
                   <div class="product-card">
                     <div class="product-image">
-                      <img src="img/cuisine2.png" alt="culinaire Kpalimé" />
+                      <img src="img/cuisine2.webp" alt="culinaire Kpalimé" />
                       <span class="product-tag">🔥 Best seller</span>
                     </div>
                     <div class="product-info">
@@ -597,13 +582,15 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
+      <div class="">
         <p>CEAA - Centre d'enseignement artisanal et artistique de Kpalimé</p>
 
         <div class="footer-links">
+          <a href="index.html">Accueil</a>
           <a href="#formations">Formations</a>
-          <a href="#produits">Produits</a>
+          <a href="pages/actualites.html">Actualités</a>
           <a href="pages/formateurs.html">Formateurs</a>
+          <a href="pages/contact.html">Contact</a>
         </div>
 
         <div class="social-links">

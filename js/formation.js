@@ -54,3 +54,25 @@
       }
     });
   })();
+
+  // Gestion du dropdown sur mobile (clic)
+  (function() {
+    const dropdown = document.getElementById('formationsDropdown');
+    if (dropdown) {
+      dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          if (e.target.tagName === 'A' && (e.target.getAttribute('href') === '#' || e.target.parentElement.id === 'formationsDropdown')) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+          }
+        }
+      });
+    }
+
+    // Réinitialiser au redimensionnement
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        dropdown?.classList.remove('active');
+      }
+    });
+  })();

@@ -274,7 +274,7 @@
             Formation diplômante sur 8 mois - Stages pratiques - Exposition de
             fin d'année
           </p>
-          <a href="contact.html" class="btn-cta">S'inscrire maintenant</a>
+          <a href="../pages/contact.html" class="btn-cta">S'inscrire maintenant</a>
         </section>
 
         <!-- Bouton retour -->
@@ -289,24 +289,14 @@
         <p>© CEAA Kpalimé - Tous droits réservés</p>
         <div class="footer-links">
           <a href="../index.html">Accueil</a>
-          <a href="formations.html">Formations</a>
-          <a href="actualites.html">Actualités</a>
-          <a href="formateurs.html">Formateurs</a>
+          <a href="../index.html#formations">Formations</a>
+          <a href="../pages/actualites.html">Actualités</a>
+          <a href="../pages/formateurs.html">Formateurs</a>
+          <a href="../pages/contact.html">Contact</a>
         </div>
       </div>
     </footer>
 
-    <script>
-      // Menu toggle pour mobile
-      const menuToggle = document.getElementById("menuToggle");
-      const navMenu = document.getElementById("navMenu");
-      if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", () => {
-          navMenu.classList.toggle("active");
-          const expanded = navMenu.classList.contains("active");
-          menuToggle.setAttribute("aria-expanded", expanded);
-        });
-      }
-    </script>
+    <script src="../js/formation.js"></script>
   </body>
 </html>
